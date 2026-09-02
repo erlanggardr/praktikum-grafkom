@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafkom Praktikum 1</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #1b1f2a;
+        font-family: Arial, sans-serif;
+      }
+
+      canvas {
+        background: white;
+        border: 2px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="graphicsCanvas" width="800" height="500"></canvas>
+
+    <label for="trail_mode" style="color: white">Trail Mode:</label>
+
+    <select id="trail_mode">
+      <option value="trail">Trail</option>
+      <option value="no_trail" selected>No Trail</option>
+    </select>
+
+    <script src="script.js"></script>
+  </body>
+</html>
