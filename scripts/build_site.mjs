@@ -510,7 +510,9 @@ function generatePraktikumPages() {
     <section class="playground-shortcuts" aria-label="Daftar Shortcut dan Petunjuk Pengguna">
       <div class="shortcut-chip">
         <div class="shortcut-keys">
-          <span class="key-cap">W</span><span class="key-cap">A</span><span class="key-cap">S</span><span class="key-cap">D</span> / <span class="key-cap">&uarr;</span><span class="key-cap">&larr;</span><span class="key-cap">&darr;</span><span class="key-cap">&rarr;</span>
+          <span class="key-cap">W</span><span class="key-cap">A</span><span class="key-cap">S</span><span class="key-cap">D</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">&uarr;</span><span class="key-cap">&larr;</span><span class="key-cap">&darr;</span><span class="key-cap">&rarr;</span>
         </div>
         <span class="shortcut-desc">Gerak Player (Translasi 2D)</span>
       </div>
@@ -518,25 +520,23 @@ function generatePraktikumPages() {
         <div class="shortcut-keys">
           <span class="key-cap">Drag &amp; Drop Mouse</span>
         </div>
-        <span class="shortcut-desc">Tarik Slingshot / Luncurkan Bola</span>
+        <span class="shortcut-desc">Tarik Slingshot &amp; Tembak Bola</span>
       </div>
       <div class="shortcut-chip">
         <div class="shortcut-keys">
-          <span class="key-cap">R</span> / <span class="key-cap">C</span>
+          <span class="key-cap">Klik Kanvas</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">C</span>
         </div>
-        <span class="shortcut-desc">Reset Posisi &amp; Ganti Warna Player</span>
+        <span class="shortcut-desc">Ganti Palet Warna Player</span>
       </div>
       <div class="shortcut-chip">
         <div class="shortcut-keys">
           <span class="key-cap">Space</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">R</span>
         </div>
-        <span class="shortcut-desc">Pause / Resume Animasi</span>
-      </div>
-      <div class="shortcut-chip">
-        <div class="shortcut-keys">
-          <span class="key-cap">Klik Canvas</span>
-        </div>
-        <span class="shortcut-desc">Ganti Warna Player / Tembak Bola</span>
+        <span class="shortcut-desc">Pause (Space) &amp; Reset Posisi (R)</span>
       </div>
     </section>`;
 

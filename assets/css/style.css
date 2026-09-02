@@ -845,28 +845,44 @@ code, pre {
 .playground-shortcuts {
   margin-bottom: 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 960px) {
+  .playground-shortcuts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .playground-shortcuts {
+    grid-template-columns: 1fr;
+  }
 }
 
 .shortcut-chip {
   background: var(--secondary-grouped-bg);
   border: 1px solid var(--glass-card-border);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
+  padding: 12px 14px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--secondary-label);
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
   box-shadow: var(--shadow-card);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.shortcut-chip:hover {
+  border-color: var(--system-blue-border);
 }
 
 .shortcut-keys {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 4px;
-  flex-shrink: 0;
 }
 
 .key-cap {
@@ -879,11 +895,21 @@ code, pre {
   font-size: 11px;
   font-weight: 700;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.key-separator {
+  color: var(--tertiary-label);
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 2px;
 }
 
 .shortcut-desc {
-  color: var(--label);
+  color: var(--secondary-label);
+  font-size: 12.5px;
   font-weight: 500;
+  line-height: 1.35;
 }
 
 /* Challenge Implementation Checklist */

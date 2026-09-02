@@ -47,7 +47,7 @@
       });
     }
 
-    // Keyboard navigation: [ / ← (Prev), ] / → (Next), Esc / H (Home)
+    // Keyboard navigation: [ (Prev), ] (Next), H (Home)
     window.addEventListener('keydown', (e) => {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
 
@@ -55,9 +55,9 @@
       const nextBtn = document.getElementById('nav-next-btn');
       const homeLink = document.getElementById('nav-home-link');
 
-      if ((e.key === 'ArrowLeft' || e.key === '[') && prevBtn && !prevBtn.disabled) {
+      if (e.key === '[' && prevBtn && !prevBtn.disabled) {
         prevBtn.click();
-      } else if ((e.key === 'ArrowRight' || e.key === ']') && nextBtn && !nextBtn.disabled) {
+      } else if (e.key === ']' && nextBtn && !nextBtn.disabled) {
         nextBtn.click();
       } else if ((e.key === 'h' || e.key === 'H') && homeLink) {
         homeLink.click();
