@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Praktikum Grafika Komputer - Apple HIG-Inspired Client Script
  * Kelompok: Kelompok Yolo
  * Anggota: Jalu Cahyo Senodiputro (5025241155), Erlangga Rizqi Dwi Raswanto (5025241179)
@@ -115,6 +115,11 @@
   function initCanvasWorkbench() {
     const canvas = document.getElementById('grafkom-canvas');
     if (!canvas) return;
+
+    // Skip placeholder 3D wireframe cube if page provides custom workbench script
+    if (canvas.dataset.custom === 'true' || canvas.classList.contains('custom-workbench')) {
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;

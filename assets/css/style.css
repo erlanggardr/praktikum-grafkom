@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Praktikum Grafika Komputer - Apple HIG-Inspired Design System
    Kelompok: Kelompok Yolo
    Anggota: Jalu Cahyo Senodiputro (5025241155), Erlangga Rizqi Dwi Raswanto (5025241179)
@@ -746,6 +746,191 @@ code, pre {
   border: 1px solid rgba(255, 255, 255, 0.1);
   pointer-events: none;
   z-index: 5;
+}
+
+/* Interactive Playground Control Bar & Shortcuts */
+.playground-control-bar {
+  background: var(--tertiary-system-bg);
+  border-top: 1px solid var(--separator);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.control-group-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--secondary-label);
+}
+
+.control-select {
+  background: var(--fill-tertiary);
+  color: var(--label);
+  border: 1px solid var(--glass-card-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.control-select:focus,
+.control-select:hover {
+  border-color: var(--system-blue);
+  background: var(--fill-quaternary);
+}
+
+.control-btn {
+  background: var(--fill-tertiary);
+  color: var(--label);
+  border: 1px solid var(--glass-card-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.control-btn:hover {
+  background: var(--system-blue);
+  color: #ffffff;
+  border-color: var(--system-blue);
+}
+
+.control-btn:active {
+  transform: scale(0.97);
+}
+
+.control-btn.btn-accent {
+  background: var(--system-blue-subtle);
+  border-color: var(--system-blue-border);
+  color: var(--system-blue);
+  font-weight: 600;
+}
+
+.control-btn.btn-accent:hover {
+  background: var(--system-blue);
+  color: #ffffff;
+}
+
+.control-btn.btn-danger-subtle {
+  background: rgba(255, 69, 58, 0.12);
+  border-color: rgba(255, 69, 58, 0.3);
+  color: #ff453a;
+}
+
+.control-btn.btn-danger-subtle:hover {
+  background: #ff453a;
+  color: #ffffff;
+}
+
+/* Playground Instructions & Keyboard Shortcuts */
+.playground-shortcuts {
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.shortcut-chip {
+  background: var(--secondary-grouped-bg);
+  border: 1px solid var(--glass-card-border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--secondary-label);
+  box-shadow: var(--shadow-card);
+}
+
+.shortcut-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.key-cap {
+  background: var(--fill-tertiary);
+  color: var(--label);
+  border: 1px solid var(--separator);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.shortcut-desc {
+  color: var(--label);
+  font-weight: 500;
+}
+
+/* Challenge Implementation Checklist */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.challenge-item {
+  background: var(--fill-quaternary);
+  border: 1px solid var(--glass-card-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.challenge-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.challenge-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--label);
+}
+
+.challenge-status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--system-green-subtle);
+  color: var(--system-green);
+  border: 1px solid var(--system-green-border);
+}
+
+.challenge-item-desc {
+  font-size: 13px;
+  color: var(--secondary-label);
+  line-height: 1.4;
 }
 
 /* Meta Panel */

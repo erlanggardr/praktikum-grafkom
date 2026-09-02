@@ -1,4 +1,4 @@
-﻿import { writeFileSync, mkdirSync } from 'fs';
+import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
 const PRAKTIKUM_DATA = [
@@ -9,8 +9,8 @@ const PRAKTIKUM_DATA = [
     title: 'Graphics Playground dengan HTML Canvas 2D',
     category: 'HTML Canvas 2D',
     hasPraktikum: true,
-    status: 'progress',
-    statusLabel: 'On Progress',
+    status: 'finished',
+    statusLabel: 'Finished',
     desc: 'Pengenalan proses paling dasar dalam grafika komputer melalui mini aplikasi Graphics Playground menggunakan HTML, JavaScript, dan HTML Canvas 2D untuk membentuk dan memanipulasi primitif 2D, warna, animasi frame, serta interaksi pengguna.',
     details: [
       'Menjelaskan fungsi HTML Canvas sebagai area gambar.',
@@ -451,6 +451,187 @@ function generatePraktikumPages() {
 
     const detailsList = p.details.map(d => `<li>${d}</li>`).join('\n              ');
 
+    let viewportContent = '';
+    let shortcutsContent = '';
+    let challengesContent = '';
+    let extraScripts = '';
+
+    if (p.id === 1) {
+      viewportContent = `
+    <!-- Interactive Canvas Viewport Workbench -->
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika Praktikum 1">
+      <div class="viewport-toolbar">
+        <div class="toolbar-info">
+          <div class="toolbar-stat">
+            <span>Viewport:</span>
+            <span id="res-stat" class="toolbar-stat-val">800 × 500 px</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>FPS:</span>
+            <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Mode:</span>
+            <span class="toolbar-stat-val">HTML Canvas 2D</span>
+          </div>
+        </div>
+        <div class="toolbar-actions">
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="grafkom-canvas" class="canvas-target custom-workbench" data-custom="true" aria-label="Kanvas Render Grafika Praktikum 1: Graphics Playground"></canvas>
+        <div id="coords-display" class="canvas-coords-indicator">X: 0px, Y: 0px | UV: (0.00, 0.00)</div>
+      </div>
+
+      <!-- Playground Control Bar -->
+      <div class="playground-control-bar">
+        <div class="control-group-row">
+          <label for="trail_mode" class="control-label">Trail Mode:</label>
+          <select id="trail_mode" class="control-select" aria-label="Mode Jejak Animasi">
+            <option value="no_trail" selected>No Trail (Normal)</option>
+            <option value="fade_trail">Fade Trail (Jejak Memudar)</option>
+            <option value="trail">Persistent Trail (Jejak Abadi)</option>
+          </select>
+        </div>
+        <div class="control-group-row">
+          <button id="btn_pause" class="control-btn btn-accent" title="Pause / Resume Siklus Frame Animasi (Shortcut: Space)">Pause (Space)</button>
+          <button id="btn_reset_player" class="control-btn" title="Reset Posisi Player ke Titik Semula (Shortcut: R)">Reset Player (R)</button>
+          <button id="btn_cycle_color" class="control-btn" title="Ganti Palet Warna Player (Shortcut: C / Klik Canvas)">Ganti Warna (C)</button>
+          <button id="btn_clear_circles" class="control-btn btn-danger-subtle" title="Bersihkan Seluruh Bola Hasil Tembakan Slingshot">Hapus Bola</button>
+        </div>
+      </div>
+    </section>`;
+
+      shortcutsContent = `
+    <!-- Petunjuk Interaksi & Shortcut Keyboard -->
+    <section class="playground-shortcuts" aria-label="Daftar Shortcut dan Petunjuk Pengguna">
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">W</span><span class="key-cap">A</span><span class="key-cap">S</span><span class="key-cap">D</span> / <span class="key-cap">&uarr;</span><span class="key-cap">&larr;</span><span class="key-cap">&darr;</span><span class="key-cap">&rarr;</span>
+        </div>
+        <span class="shortcut-desc">Gerak Player (Translasi 2D)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Drag &amp; Drop Mouse</span>
+        </div>
+        <span class="shortcut-desc">Tarik Slingshot / Luncurkan Bola</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">R</span> / <span class="key-cap">C</span>
+        </div>
+        <span class="shortcut-desc">Reset Posisi &amp; Ganti Warna Player</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Space</span>
+        </div>
+        <span class="shortcut-desc">Pause / Resume Animasi</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Klik Canvas</span>
+        </div>
+        <span class="shortcut-desc">Ganti Warna Player / Tembak Bola</span>
+      </div>
+    </section>`;
+
+      challengesContent = `
+        <h3 class="meta-box-title" style="margin-top: 20px;">Fitur &amp; Tantangan yang Diimplementasikan</h3>
+        <div class="challenges-grid">
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge A: Bouncing Object &amp; Dynamic Color</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Bola bergerak memantul pada 4 dinding canvas dengan perubahan warna dinamis setiap terjadi tumbukan.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge B &amp; 34.1: Slingshot Launcher &amp; Aiming Trajectory</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Mekanik ketapel elastis dengan garis bidik putus-putus, gauge kekuatan daya tembak, dan peluncuran bola pantul proporsional berlawanan tarikan.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge C: Click to Change Color</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Mengganti warna player secara siklis saat canvas diklik atau tombol keyboard 'C' ditekan.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge D: State-Based Keyboard Movement</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Translasi halus objek player 2D menggunakan WASD dan Arrow Keys dengan pembatasan koordinat kanvas serta tombol 'R' untuk reset.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge E: Real-time Coordinate Display</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Pemetaan dan penayangan koordinat pixel (X, Y) serta nilai UV kursor mouse secara real-time pada HUD viewport.</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge Tambahan 34.2: Trail Mode Selector</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Toggle mode jejak visual kanvas: No Trail (Normal), Fade Trail (Jejak memudar halus), dan Persistent Trail (Jejak abadi).</p>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-item-header">
+              <span class="challenge-item-title">Challenge Tambahan 34.3: Multiple Moving Objects</span>
+              <span class="challenge-status-tag">Selesai</span>
+            </div>
+            <p class="challenge-item-desc">Objek bola sekunder yang bergerak mandiri ditambah kumpulan bola tak terbatas hasil tembakan slingshot.</p>
+          </div>
+        </div>`;
+
+      extraScripts = `<script src="./app.js"></script>`;
+    } else {
+      viewportContent = `
+    <!-- Interactive Canvas Viewport Workbench -->
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+      <div class="viewport-toolbar">
+        <div class="toolbar-info">
+          <div class="toolbar-stat">
+            <span>Viewport:</span>
+            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>FPS:</span>
+            <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Mode:</span>
+            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+          </div>
+        </div>
+        <div class="toolbar-actions">
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum ${p.id}"></canvas>
+        <div class="canvas-placeholder-hud">
+          <span class="placeholder-badge">Praktikum ${p.id}</span>
+          <h2 class="placeholder-title">${p.title}</h2>
+          <p class="placeholder-subtext">${p.hasPraktikum ? 'Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.' : '-'}</p>
+        </div>
+        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+      </div>
+    </section>`;
+    }
+
     const html = `<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -516,39 +697,9 @@ function generatePraktikumPages() {
       </div>
     </section>
 
-    <!-- Interactive Canvas Viewport Workbench -->
-    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
-      <div class="viewport-toolbar">
-        <div class="toolbar-info">
-          <div class="toolbar-stat">
-            <span>Viewport:</span>
-            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
-          </div>
-          <div class="toolbar-stat">
-            <span>FPS:</span>
-            <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
-          </div>
-          <div class="toolbar-stat">
-            <span>Mode:</span>
-            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
-          </div>
-        </div>
-        <div class="toolbar-actions">
-          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
-          <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
-        </div>
-      </div>
+    ${viewportContent}
 
-      <div class="canvas-wrapper">
-        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum ${p.id}"></canvas>
-        <div class="canvas-placeholder-hud">
-          <span class="placeholder-badge">Praktikum ${p.id}</span>
-          <h2 class="placeholder-title">${p.title}</h2>
-          <p class="placeholder-subtext">${p.hasPraktikum ? 'Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.' : '-'}</p>
-        </div>
-        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
-      </div>
-    </section>
+    ${shortcutsContent}
 
     <!-- Metadata & Implementation Specs -->
     <section class="workbench-meta-panel">
@@ -559,6 +710,7 @@ function generatePraktikumPages() {
           <ul>
             ${detailsList}
           </ul>
+          ${challengesContent}
         </div>
       </div>
 
@@ -578,6 +730,10 @@ function generatePraktikumPages() {
               <th>Status Praktikum</th>
               <td>${p.statusLabel}</td>
             </tr>
+            <tr>
+              <th>Renderer</th>
+              <td>${p.id === 1 ? 'HTML Canvas 2D' : 'Canvas 2D / WebGL'}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -587,6 +743,7 @@ function generatePraktikumPages() {
   ${renderSiteFooter(true)}
 
   <script src="../assets/js/main.js"></script>
+  ${extraScripts}
 </body>
 </html>
 `;
