@@ -1,10 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grafkom Praktikum 1</title>
+    <title>Grafika Komputer P1 - Graphics Playground</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
         min-height: 100vh;
@@ -13,24 +16,113 @@
         justify-content: center;
         align-items: center;
         background: #1b1f2a;
-        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #ecf0f1;
+        padding: 20px;
       }
-
+      .canvas-container {
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        overflow: hidden;
+      }
       canvas {
-        background: white;
-        border: 2px solid #444;
+        background: #ffffff;
+        border: 2px solid #34495e;
+        display: block;
+        cursor: crosshair;
+      }
+      .controls-container {
+        margin-top: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        background: #242b3d;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border: 1px solid #3a4760;
+        max-width: 800px;
+        width: 100%;
+      }
+      .control-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+      }
+      select, button {
+        background: #1b1f2a;
+        color: #ecf0f1;
+        border: 1px solid #4a5d7e;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      select:hover, button:hover {
+        background: #2980b9;
+        border-color: #3498db;
+      }
+      button:active {
+        transform: scale(0.97);
+      }
+      .instructions {
+        margin-top: 10px;
+        max-width: 800px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 8px;
+        font-size: 0.78rem;
+        color: #95a5a6;
+      }
+      .instruction-badge {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 6px 10px;
+        border-radius: 4px;
+        border-left: 3px solid #3498db;
+      }
+      .key {
+        background: #34495e;
+        color: #fff;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: monospace;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <canvas id="graphicsCanvas" width="800" height="500"></canvas>
+    <div class="canvas-container">
+      <canvas id="graphicsCanvas" width="800" height="500"></canvas>
+    </div>
 
-    <label for="trail_mode" style="color: white">Trail Mode:</label>
+    <div class="controls-container">
+      <div class="control-group">
+        <label for="trail_mode">Mode:</label>
+        <select id="trail_mode">
+          <option value="no_trail" selected>No Trail (Normal)</option>
+          <option value="fade_trail">Fade Trail (Jejak Memudar)</option>
+          <option value="trail">Persistent Trail (Jejak Permanen)</option>
+        </select>
+      </div>
 
-    <select id="trail_mode">
-      <option value="trail">Trail</option>
-      <option value="no_trail" selected>No Trail</option>
-    </select>
+      <div class="control-group">
+        <button id="btn_pause">Pause / Resume (Space)</button>
+        <button id="btn_reset_player">Reset Player (R)</button>
+        <button id="btn_clear_circles">Hapus Lingkaran</button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <div class="instruction-badge"><span class="key">Arrow Keys</span> / <span class="key">WASD</span>: Gerak Player (State-Based)</div>
+      <div class="instruction-badge"><span class="key">R</span>: Reset Posisi | <span class="key">C</span>: Ganti Warna</div>
+      <div class="instruction-badge"><span class="key">Space</span>: Pause / Resume Animasi</div>
+      <div class="instruction-badge"><span class="key">Drag & Drop</span>: Slingshot Luncurkan Bola Memantul</div>
+    </div>
 
     <script src="app.js"></script>
   </body>
