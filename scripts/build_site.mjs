@@ -299,7 +299,7 @@ function renderTeamBanner() {
       <!-- Team Metadata Banner -->
       <section class="team-banner" aria-label="Informasi Kelompok">
         <div class="team-banner-header">
-          <span class="team-tag">Kelompok Yolo</span>
+          <span class="team-tag">Kelompok YOLO</span>
         </div>
         <div class="team-members-grid">
           <div class="member-card">
@@ -316,6 +316,23 @@ function renderTeamBanner() {
           </div>
         </div>
       </section>`;
+}
+
+function renderSiteFooter(isSubPage = false) {
+  const homeLink = isSubPage ? `<a href="../" title="Kembali ke Halaman Utama">Direktori Praktikum</a>` : '';
+  return `
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <span class="footer-team">Kelompok YOLO &bull; Grafika Komputer</span>
+        <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
+      </div>
+      <div class="footer-links">
+        ${homeLink}
+        <a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
+      </div>
+    </div>
+  </footer>`;
 }
 
 // 1. Generate index.html (Dashboard)
@@ -404,17 +421,7 @@ function generateIndexHtml() {
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-info">
-        <span class="footer-team">Kelompok Yolo &bull; Grafika Komputer</span>
-        <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
-      </div>
-    </div>
-  </footer>
+  ${renderSiteFooter(false)}
 
   <script src="./assets/js/main.js"></script>
 </body>
@@ -577,18 +584,7 @@ function generatePraktikumPages() {
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-info">
-        <span class="footer-team">Kelompok Yolo &bull; Grafika Komputer</span>
-        <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
-      </div>
-      <div class="footer-links">
-        <a href="../" title="Kembali ke Halaman Utama">Direktori Praktikum</a>
-        <a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
-      </div>
-    </div>
-  </footer>
+  ${renderSiteFooter(true)}
 
   <script src="../assets/js/main.js"></script>
 </body>
