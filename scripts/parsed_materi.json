@@ -1,0 +1,250 @@
+[
+  {
+    "id": 1,
+    "meetingTitle": "Pengenalan Grafika Komputer",
+    "meetingSubtitle": "Fondasi dunia grafika komputer",
+    "praktikumTitle": "Graphics Playground dengan HTML Canvas 2D",
+    "category": "Pengenalan Grafika Komputer",
+    "hasPraktikum": true,
+    "desc": "Praktikum pertama memperkenalkan proses paling dasar dalam grafika komputer melalui sebuah mini aplikasi Graphics Playground menggunakan HTML, JavaScript, dan HTML Canvas 2D. Fokus praktikum bukan membuat aplikasi yang kompleks. Fokus utamanya adalah memahami bahwa gambar pada layar dibentuk dari data, seperti koordinat, ukuran, warna, dan bentuk, kemudian diproses menjadi elemen visual. Mahasiswa akan membuat beberapa primitive 2D, memberi warna, membuat satu objek bergerak, dan menambahkan interaksi pengguna. Praktikum ini menjadi jembatan konseptual sebelum mempelajari WebGL Fundamental pada Pertemuan 2.",
+    "details": [
+      "menjelaskan fungsi HTML Canvas sebagai area gambar;",
+      "memahami koordinat 2D pada canvas;",
+      "menggunakan data posisi, ukuran, dan warna untuk membentuk gambar;",
+      "menggambar rectangle, line, circle, dan triangle;",
+      "memahami hubungan primitive dengan representasi geometry;"
+    ]
+  },
+  {
+    "id": 2,
+    "meetingTitle": "WebGL Fundamental",
+    "meetingSubtitle": "Mengenal pipeline grafis di browser",
+    "praktikumTitle": "WebGL Fundamental Playground",
+    "category": "WebGL Fundamental",
+    "hasPraktikum": true,
+    "desc": "Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu: Membuat Canvas dan mendapatkan WebGL2 Context. Menyiapkan vertex data menggunakan Float32Array. Membuat dan mengisi buffer pada GPU. Menulis vertex shader sederhana.",
+    "details": [
+      "Membuat Canvas dan mendapatkan WebGL2 Context.",
+      "Menyiapkan vertex data menggunakan Float32Array.",
+      "Membuat dan mengisi buffer pada GPU.",
+      "Menulis vertex shader sederhana.",
+      "Menulis fragment shader sederhana."
+    ]
+  },
+  {
+    "id": 3,
+    "meetingTitle": "Transformasi & Sistem Koordinat",
+    "meetingSubtitle": "Membangun geometri dari koordinat",
+    "praktikumTitle": "Interactive Transformation & Coordinate System dengan WebGL",
+    "category": "Transformasi & Sistem Koordinat",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 2, mahasiswa telah mempelajari alur fundamental WebGL: Vertex Data ↓ Buffer ↓",
+    "details": [
+      "menjelaskan local coordinate dan world coordinate;",
+      "menjelaskan secara konseptual view, clip, NDC, dan screen coordinate;",
+      "menjelaskan fungsi object origin/pivot;",
+      "membuat translation matrix 3×3;",
+      "membuat rotation matrix 3×3;"
+    ]
+  },
+  {
+    "id": 4,
+    "meetingTitle": "Kamera dan Proyeksi 3D",
+    "meetingSubtitle": "Melihat dunia 3D dari kamera",
+    "praktikumTitle": "Camera, Projection & 3D dengan WebGL",
+    "category": "Kamera dan Proyeksi 3D",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 3, mahasiswa telah mempelajari transformasi object: Local Space ↓ Model Matrix ↓",
+    "details": [
+      "menjelaskan fungsi camera pada scene 3D;",
+      "menjelaskan camera position, target, dan up vector;",
+      "menghitung basis camera secara konseptual;",
+      "membuat View Matrix dengan konsep lookAt;",
+      "membuat Perspective Projection Matrix;"
+    ]
+  },
+  {
+    "id": 5,
+    "meetingTitle": "Lighting, Shading & Texture",
+    "meetingSubtitle": "Membuat objek terasa hidup",
+    "praktikumTitle": "Lighting, Shading & Texture pada WebGL",
+    "category": "Lighting, Shading & Texture",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 4, mahasiswa telah membangun pipeline 3D: Geometry ↓ Model Matrix World Space ↓ View Matrix",
+    "details": [
+      "menjelaskan fungsi normal pada shading;",
+      "membedakan face normal dan vertex normal;",
+      "menjelaskan flat shading dan smooth shading;",
+      "melakukan normalisasi vector normal;",
+      "menjelaskan mengapa normal perlu ditransformasikan;"
+    ]
+  },
+  {
+    "id": 6,
+    "meetingTitle": "Introduction to Three.js",
+    "meetingSubtitle": "Mulai membangun scene 3D",
+    "praktikumTitle": "Introduction to Three.js — Mini 3D Scene",
+    "category": "Introduction to Three.js",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 2–5, mahasiswa telah membangun grafika 3D secara langsung dengan WebGL. Banyak komponen harus dikelola secara manual: Vertex Data ↓ Buffer ↓",
+    "details": [
+      "menjelaskan posisi Three.js terhadap WebGL;",
+      "membuat project Three.js dengan Node.js dan Vite;",
+      "membuat Scene;",
+      "membuat PerspectiveCamera;",
+      "menjelaskan FOV, aspect, near, dan far pada PerspectiveCamera;"
+    ]
+  },
+  {
+    "id": 7,
+    "meetingTitle": "Three.js Interactive 3D",
+    "meetingSubtitle": "Scene 3D yang interaktif",
+    "praktikumTitle": "Three.js Interactive 3D Application — Prototype Persiapan UTS",
+    "category": "Three.js Interactive 3D",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 6, mahasiswa telah membuat mini scene Three.js dengan komponen dasar: Scene + Camera +",
+    "details": [
+      "menjelaskan Scene Graph;",
+      "membuat hierarchy parent-child;",
+      "membedakan local transform dan world transform;",
+      "menggunakan THREE.Group;",
+      "menjelaskan transform composition pada hierarchy;"
+    ]
+  },
+  {
+    "id": 8,
+    "meetingTitle": "Evaluasi Tengah Semester",
+    "meetingSubtitle": "Checkpoint konsep dan praktik",
+    "praktikumTitle": "-",
+    "category": "-",
+    "hasPraktikum": false,
+    "desc": "-",
+    "details": [
+      "-"
+    ]
+  },
+  {
+    "id": 9,
+    "meetingTitle": "Blender Fundamental 3D Modeling",
+    "meetingSubtitle": "Dasar pemodelan 3D di Blender",
+    "praktikumTitle": "Blender Fundamental & 3D Modeling --- Hard-Surface Asset",
+    "category": "Blender Fundamental 3D Modeling",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 9 merupakan awal workflow pembuatan asset 3D menggunakan Blender. Pada bagian semester sebelumnya, mahasiswa bekerja dengan WebGL dan Three.js untuk menampilkan serta mengendalikan object 3D. Mulai pertemuan ini, fokus berpindah ke bagaimana geometry 3D dibuat. Pipeline yang akan dibangun pada beberapa pertemuan berikutnya:",
+    "details": [
+      "mengenali bagian utama interface Blender;",
+      "menavigasi 3D Viewport;",
+      "menggunakan shortcut keyboard dan mouse penting;",
+      "menggunakan view preset;",
+      "melakukan selection dengan efisien;"
+    ]
+  },
+  {
+    "id": 10,
+    "meetingTitle": "Blender Materials, UV & Texturing",
+    "meetingSubtitle": "Material, UV, dan tekstur",
+    "praktikumTitle": "Blender Materials, UV & Texturing",
+    "category": "Blender Materials, UV & Texturing",
+    "hasPraktikum": true,
+    "desc": "Pada Pertemuan 9 mahasiswa telah membuat geometry asset 3D. Pertemuan 10 melanjutkan asset tersebut dari sisi surface appearance. Alur praktikum: 3D Model ↓",
+    "details": [
+      "menjelaskan hubungan geometry, material, dan texture;",
+      "menggunakan Material Properties dan Shader Editor;",
+      "menggunakan Principled BSDF;",
+      "menjelaskan fungsi UV Mapping;",
+      "menentukan seam berdasarkan struktur object;"
+    ]
+  },
+  {
+    "id": 11,
+    "meetingTitle": "Blender Lighting, Camera & Rendering",
+    "meetingSubtitle": "Lighting, kamera, dan rendering",
+    "praktikumTitle": "Blender Lighting, Camera & Rendering",
+    "category": "Blender Lighting, Camera & Rendering",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 11 melanjutkan asset yang telah dibuat pada Pertemuan 9 dan diberi UV, material, serta texture pada Pertemuan 10. Fokus praktikum kali ini bukan membuat ulang model atau material, tetapi mempresentasikan asset menjadi final image yang baik melalui lighting, camera, environment, dan render engine.",
+    "details": [
+      "menyiapkan asset P9--P10 untuk rendering;",
+      "menjelaskan peran lighting dalam visualisasi bentuk;",
+      "menggunakan Point Light;",
+      "menggunakan Sun Light;",
+      "menggunakan Spot Light;"
+    ]
+  },
+  {
+    "id": 12,
+    "meetingTitle": "Unity URP",
+    "meetingSubtitle": "Universal Render Pipeline",
+    "praktikumTitle": "Unity 3D & Real-Time Rendering Pipeline --- Unity 6+ / URP",
+    "category": "Unity URP",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 12 merupakan perpindahan dari workflow 3D Content Creation di Blender menuju Real-Time 3D Graphics di Unity. Asset yang telah dibuat pada: P9  → Modeling P10 → UV + Material + Texture",
+    "details": [
+      "membuat project Unity 6+ berbasis URP;",
+      "mengenali panel utama Unity Editor;",
+      "menggunakan Scene View dan Game View;",
+      "menggunakan Hierarchy, Inspector, Project, dan Console;",
+      "melakukan navigasi Scene View;"
+    ]
+  },
+  {
+    "id": 13,
+    "meetingTitle": "Unity Lighting & Post-Processing",
+    "meetingSubtitle": "Look development di Unity",
+    "praktikumTitle": "Unity Lighting, Material & Post Processing --- Unity 6+ / URP",
+    "category": "Unity Lighting & Post-Processing",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 13 melanjutkan scene Unity 6+ URP dari Pertemuan 12. Pada P12 mahasiswa telah melakukan: Blender Asset ↓ FBX Import",
+    "details": [
+      "menjelaskan fungsi lighting dalam real-time rendering;",
+      "menggunakan Directional Light;",
+      "menggunakan Point Light;",
+      "menggunakan Spot Light;",
+      "membandingkan karakter tiga light tersebut;"
+    ]
+  },
+  {
+    "id": 14,
+    "meetingTitle": "Unity Shader Graph",
+    "meetingSubtitle": "Visual shader tanpa kode",
+    "praktikumTitle": "Unity Shader Graph --- Custom Surface Behavior",
+    "category": "Unity Shader Graph",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 14 melanjutkan scene Unity URP dari Pertemuan 13. Pada pertemuan sebelumnya mahasiswa telah membangun: 3D Scene + URP Material",
+    "details": [
+      "menjelaskan fungsi shader dalam real-time rendering;",
+      "menjelaskan Shader Graph sebagai node-based shader authoring;",
+      "membedakan Vertex Stage dan Fragment Stage;",
+      "memahami Blackboard;",
+      "membuat exposed property;"
+    ]
+  },
+  {
+    "id": 15,
+    "meetingTitle": "VFX, Particle & Optimization",
+    "meetingSubtitle": "Efek visual dan performa",
+    "praktikumTitle": "VFX, Particle & Graphics Optimization — Unity 6+ / URP",
+    "category": "VFX, Particle & Optimization",
+    "hasPraktikum": true,
+    "desc": "Pertemuan 15 merupakan kelanjutan dari rangkaian Unity pada Pertemuan 12–14. Pada pertemuan sebelumnya mahasiswa telah memiliki: P12 Unity + URP ↓",
+    "details": [
+      "menjelaskan fungsi VFX pada real-time graphics;",
+      "membuat Particle System;",
+      "menjelaskan siklus hidup particle;",
+      "mengatur emitter;",
+      "mengatur emission rate;"
+    ]
+  },
+  {
+    "id": 16,
+    "meetingTitle": "UAS / Final Project",
+    "meetingSubtitle": "Proyek akhir integratif",
+    "praktikumTitle": "-",
+    "category": "-",
+    "hasPraktikum": false,
+    "desc": "-",
+    "details": [
+      "-"
+    ]
+  }
+]

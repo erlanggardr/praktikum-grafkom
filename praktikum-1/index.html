@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 1: Graphics Playground dengan HTML Canvas 2D - Kelompok YOLO</title>
+  <meta name="description" content="Modul Praktikum 1: Graphics Playground dengan HTML Canvas 2D Grafika Komputer oleh Kelompok YOLO.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <div class="brand-title">
+          <a href="../" id="nav-home-link" class="brand-home-link" title="Kembali ke Daftar Praktikum (H / Esc)">Praktikum Grafika Komputer Kelompok YOLO</a>
+          <span class="brand-separator">/</span>
+          <span class="brand-current-page">Praktikum 1</span>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Navigasi Praktikum">
+        <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
+          <option value="../">-- Pilih Praktikum --</option>
+                <option value="../praktikum-1/" selected>Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+                <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+                <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
+                <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
+                <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
+                <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+                <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
+                <option value="../praktikum-8/">Praktikum 8: -</option>
+                <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
+                <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
+                <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
+                <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
+                <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
+                <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
+                <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
+                <option value="../praktikum-16/">Praktikum 16: -</option>
+        </select>
+        <button id="theme-toggle" class="btn-icon" title="Toggle Tema" aria-label="Toggle Tema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+      <!-- Team Metadata Banner -->
+      <section class="team-banner" aria-label="Informasi Kelompok">
+        <div class="team-banner-header">
+          <span class="team-tag">Kelompok Yolo</span>
+        </div>
+        <div class="team-members-grid">
+          <div class="member-card">
+            <div class="member-info">
+              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+              <span class="member-nrp">NRP 5025241155</span>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-info">
+              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+              <span class="member-nrp">NRP 5025241179</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Workbench Header -->
+    <section class="workbench-header">
+      <div>
+        <div class="breadcrumb-trail">
+          <a href="../">Daftar Modul</a>
+          <span>&rsaquo;</span>
+          <span>HTML Canvas 2D</span>
+          <span>&rsaquo;</span>
+          <span class="status-badge progress">On Progress</span>
+        </div>
+        <div class="workbench-title-row">
+          <h1 class="workbench-title">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</h1>
+        </div>
+      </div>
+      <div class="workbench-pagination" aria-label="Navigasi Halaman Praktikum">
+        <button class="nav-btn" id="nav-prev-btn" disabled aria-disabled="true"><span aria-hidden="true">&larr;</span> Prev</button>
+        <a href="../" class="nav-btn" title="Daftar Modul">Daftar</a>
+        <a href="../praktikum-2/" class="nav-btn" id="nav-next-btn" title="Praktikum Selanjutnya ]">Praktikum 2 <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <!-- Interactive Canvas Viewport Workbench -->
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+      <div class="viewport-toolbar">
+        <div class="toolbar-info">
+          <div class="toolbar-stat">
+            <span>Viewport:</span>
+            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>FPS:</span>
+            <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Mode:</span>
+            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+          </div>
+        </div>
+        <div class="toolbar-actions">
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum 1"></canvas>
+        <div class="canvas-placeholder-hud">
+          <span class="placeholder-badge">Praktikum 1</span>
+          <h2 class="placeholder-title">Graphics Playground dengan HTML Canvas 2D</h2>
+          <p class="placeholder-subtext">Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.</p>
+        </div>
+        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+      </div>
+    </section>
+
+    <!-- Metadata & Implementation Specs -->
+    <section class="workbench-meta-panel">
+      <div class="meta-box">
+        <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
+        <div class="meta-box-content">
+          <p>Pengenalan proses paling dasar dalam grafika komputer melalui mini aplikasi Graphics Playground menggunakan HTML, JavaScript, dan HTML Canvas 2D untuk membentuk dan memanipulasi primitif 2D, warna, animasi frame, serta interaksi pengguna.</p>
+          <ul>
+            <li>Menjelaskan fungsi HTML Canvas sebagai area gambar.</li>
+              <li>Memahami sistem koordinat 2D pada canvas.</li>
+              <li>Menggambar bentuk primitif rectangle, line, circle, dan triangle.</li>
+              <li>Membuat animasi berbasis frame dengan requestAnimationFrame().</li>
+              <li>Menangani input interaksi pengguna.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meta-box">
+        <h2 class="meta-box-title">Spesifikasi Praktikum</h2>
+        <table class="tech-specs-table">
+          <tbody>
+            <tr>
+              <th>Nomor Modul</th>
+              <td>Praktikum 1</td>
+            </tr>
+            <tr>
+              <th>Topik / Kategori</th>
+              <td>HTML Canvas 2D</td>
+            </tr>
+            <tr>
+              <th>Status Praktikum</th>
+              <td>On Progress</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <span class="footer-team">Kelompok Yolo &bull; Grafika Komputer</span>
+        <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
+      </div>
+      <div class="footer-links">
+        <a href="../" title="Kembali ke Halaman Utama">Direktori Praktikum</a>
+        <a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

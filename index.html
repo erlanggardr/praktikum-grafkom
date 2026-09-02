@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum Grafika Komputer Kelompok YOLO</title>
+  <meta name="description" content="Kompilasi Tugas Praktikum Grafika Komputer 1-16 oleh Kelompok YOLO (Jalu Cahyo Senodiputro & Erlangga Rizqi Dwi Raswanto).">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <!-- Global Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a href="./" class="brand-title" id="nav-home-link">
+          <span>Praktikum Grafika Komputer Kelompok YOLO</span>
+        </a>
+      </div>
+      <nav class="header-nav" aria-label="Navigasi Praktikum">
+        <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
+          <option value="./">-- Pilih Praktikum --</option>
+                <option value="./praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+                <option value="./praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+                <option value="./praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
+                <option value="./praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
+                <option value="./praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
+                <option value="./praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+                <option value="./praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
+                <option value="./praktikum-8/">Praktikum 8: -</option>
+                <option value="./praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
+                <option value="./praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
+                <option value="./praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
+                <option value="./praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
+                <option value="./praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
+                <option value="./praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
+                <option value="./praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
+                <option value="./praktikum-16/">Praktikum 16: -</option>
+        </select>
+        <button id="theme-toggle" class="btn-icon" title="Toggle Tema (Dark/Light)" aria-label="Toggle Tema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+      <!-- Team Metadata Banner -->
+      <section class="team-banner" aria-label="Informasi Kelompok">
+        <div class="team-banner-header">
+          <span class="team-tag">Kelompok YOLO</span>
+        </div>
+        <div class="team-members-grid">
+          <div class="member-card">
+            <div class="member-info">
+              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+              <span class="member-nrp">NRP 5025241155</span>
+            </div>
+          </div>
+          <div class="member-card">
+            <div class="member-info">
+              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+              <span class="member-nrp">NRP 5025241179</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Hero Introduction -->
+    <section class="hero-section">
+      <h1 class="hero-title">Daftar Modul Praktikum</h1>
+      <p class="hero-desc">
+        Repositori penugasan mata kuliah Grafika Komputer oleh Kelompok YOLO. Pilih dan buka modul praktikum untuk melihat implementasi kode.
+      </p>
+    </section>
+
+    <!-- Filter & Search Bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="finished">Finished</button>
+        <button class="filter-btn" data-filter="progress">On Progress</button>
+      </div>
+      <input type="search" id="module-search" class="search-input" placeholder="Cari praktikum atau topik..." aria-label="Cari Praktikum">
+    </div>
+
+    <!-- Modules Grid -->
+    <section class="modules-grid" aria-label="Grid Praktikum 1-16">
+      
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 1</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Graphics Playground dengan HTML Canvas 2D</h3>
+            <p class="module-desc">Pengenalan proses paling dasar dalam grafika komputer melalui mini aplikasi Graphics Playground menggunakan HTML, JavaScript, dan HTML Canvas 2D untuk membentuk dan memanipulasi primitif 2D, warna, animasi frame, serta interaksi pengguna.</p>
+          </div>
+          <div class="module-footer">
+            <span>HTML Canvas 2D</span>
+            <a href="./praktikum-1/" class="module-link-action" aria-label="Buka Praktikum 1">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 2</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">WebGL Fundamental Playground</h3>
+            <p class="module-desc">Implementasi pipeline grafis WebGL2 dasar di browser: inisialisasi context, alokasi vertex data dan buffer pada GPU, penulisan Vertex & Fragment Shader, compiling/linking shader, dan rendering primitif triangle dengan animasi loop.</p>
+          </div>
+          <div class="module-footer">
+            <span>WebGL Fundamental</span>
+            <a href="./praktikum-2/" class="module-link-action" aria-label="Buka Praktikum 2">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 3</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Interactive Transformation & Coordinate System dengan WebGL</h3>
+            <p class="module-desc">Penerapan sistem koordinat lokal vs world dan transformasi geometri (translasi, rotasi, skala) menggunakan matriks transformasi 3×3 yang dikirimkan ke GPU sebagai uniform pada WebGL.</p>
+          </div>
+          <div class="module-footer">
+            <span>Transformasi & Sistem Koordinat</span>
+            <a href="./praktikum-3/" class="module-link-action" aria-label="Buka Praktikum 3">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 4</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Camera, Projection & 3D dengan WebGL</h3>
+            <p class="module-desc">Konstruksi pipeline 3D pada WebGL meliputi pembuatan geometri kubus 3D, View Matrix dengan konsep LookAt (kamera, target, up vector), Perspective & Orthographic Projection Matrix, serta aktivasi Depth Test (Z-buffer).</p>
+          </div>
+          <div class="module-footer">
+            <span>Kamera & Proyeksi 3D</span>
+            <a href="./praktikum-4/" class="module-link-action" aria-label="Buka Praktikum 4">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 5</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Lighting, Shading & Texture pada WebGL</h3>
+            <p class="module-desc">Pengembangan permukaan objek 3D di WebGL dengan menambahkan data Vektor Normal permukaan, simulasi pencahayaan (Ambient, Diffuse, Specular), Normal Matrix, perbandingan Flat vs Smooth Shading, dan UV Texture Mapping.</p>
+          </div>
+          <div class="module-footer">
+            <span>Lighting, Shading & Texture</span>
+            <a href="./praktikum-5/" class="module-link-action" aria-label="Buka Praktikum 5">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 6</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Introduction to Three.js — Mini 3D Scene</h3>
+            <p class="module-desc">Pembangunan scene grafika 3D terstruktur menggunakan Three.js sebagai abstraction layer di atas WebGL: inisialisasi Scene, PerspectiveCamera, WebGLRenderer, Mesh (Box, Sphere, Plane), Material, Lighting, Shadow, dan Animation Loop responsif.</p>
+          </div>
+          <div class="module-footer">
+            <span>Three.js Fundamental</span>
+            <a href="./praktikum-6/" class="module-link-action" aria-label="Buka Praktikum 6">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 7</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Three.js Interactive 3D Application — Prototype Persiapan UTS</h3>
+            <p class="module-desc">Pengembangan aplikasi 3D interaktif berbasis Three.js: hirarki Scene Graph (Parent-Child & Group), PBR Material (MeshStandardMaterial), loading asset model 3D (GLTF/GLB), AnimationMixer, raycasting interaksi klik/hover objek, dan environment map.</p>
+          </div>
+          <div class="module-footer">
+            <span>Three.js Interactive 3D</span>
+            <a href="./praktikum-7/" class="module-link-action" aria-label="Buka Praktikum 7">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 8</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">-</h3>
+            <p class="module-desc">-</p>
+          </div>
+          <div class="module-footer">
+            <span>-</span>
+            <a href="./praktikum-8/" class="module-link-action" aria-label="Buka Praktikum 8">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 9</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Blender Fundamental & 3D Modeling — Hard-Surface Asset</h3>
+            <p class="module-desc">Workflow pemodelan aset 3D hard-surface di Blender: navigasi 3D Viewport, manipulasi primitif, Edit Mode (Extrude, Inset, Loop Cut, Bevel), modifier (Subdivision Surface, Bevel, Mirror), dan cleanup topologi mesh 3D.</p>
+          </div>
+          <div class="module-footer">
+            <span>Blender 3D Modeling</span>
+            <a href="./praktikum-9/" class="module-link-action" aria-label="Buka Praktikum 9">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 10</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Blender Materials, UV & Texturing</h3>
+            <p class="module-desc">Proses unwrap UV mapping dan pembuatan material PBR di Blender: penentuan Mark Seam, UV Unwrap, packing UV island, evaluasi texel density & distorsi UV, serta pembuatan material PBR menggunakan Principled BSDF dan Shader Editor.</p>
+          </div>
+          <div class="module-footer">
+            <span>Blender UV & Texturing</span>
+            <a href="./praktikum-10/" class="module-link-action" aria-label="Buka Praktikum 10">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 11</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Blender Lighting, Camera & Rendering</h3>
+            <p class="module-desc">Penyajian aset 3D melalui pencahayaan dan rendering di Blender: konfigurasi Point, Sun, Spot, dan Area Light, teknik Three-Point Lighting (Key, Fill, Rim), pengaturan kamera & komposisi (Focal Length, DoF), HDRI environment, dan komparasi render engine EEVEE vs Cycles.</p>
+          </div>
+          <div class="module-footer">
+            <span>Blender Lighting & Rendering</span>
+            <a href="./praktikum-11/" class="module-link-action" aria-label="Buka Praktikum 11">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 12</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</h3>
+            <p class="module-desc">Integrasi aset 3D ke dalam Unity 6+ dengan Universal Render Pipeline (URP): ekspor FBX dari Blender, import aset ke Unity, setup GameObject & Hierarchy, konfigurasi material URP Lit, pembuatan Prefab, dan penyusunan mini scene real-time.</p>
+          </div>
+          <div class="module-footer">
+            <span>Unity URP</span>
+            <a href="./praktikum-12/" class="module-link-action" aria-label="Buka Praktikum 12">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 13</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Unity Lighting, Material & Post Processing — Unity 6+ / URP</h3>
+            <p class="module-desc">Look development real-time pada Unity 6+ URP: pengaturan hierarchy tata cahaya (Directional, Point, Spot), shadow tuning, Global Volume post-processing (Bloom, Color Grading, Tonemapping, SSAO), dan studi komparasi scene Siang vs Malam.</p>
+          </div>
+          <div class="module-footer">
+            <span>Unity Lighting & Post-Processing</span>
+            <a href="./praktikum-13/" class="module-link-action" aria-label="Buka Praktikum 13">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 14</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">Unity Shader Graph — Custom Surface Behavior</h3>
+            <p class="module-desc">Pembuatan shader visual kustom tanpa coding menggunakan Unity Shader Graph di URP: implementasi Emission Pulse Shader, Dissolve Shader dengan Emissive Edge, Animated Surface Shader, dan manipulasi vertex wave.</p>
+          </div>
+          <div class="module-footer">
+            <span>Unity Shader Graph</span>
+            <a href="./praktikum-14/" class="module-link-action" aria-label="Buka Praktikum 14">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 15</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">VFX, Particle & Graphics Optimization — Unity 6+ / URP</h3>
+            <p class="module-desc">Pembuatan efek visual menggunakan Unity Particle System yang diintegrasikan dengan Shader Graph, disertai teknik profiling dan optimasi grafika real-time (Rendering Statistics, GPU Instancing, LOD Group, Occlusion Culling, Mipmapping).</p>
+          </div>
+          <div class="module-footer">
+            <span>Unity VFX & Optimization</span>
+            <a href="./praktikum-15/" class="module-link-action" aria-label="Buka Praktikum 15">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="module-card" data-status="progress">
+          <div>
+            <div class="module-card-top">
+              <span class="module-number">Praktikum 16</span>
+              <span class="status-badge progress">On Progress</span>
+            </div>
+            <h3 class="module-title">-</h3>
+            <p class="module-desc">-</p>
+          </div>
+          <div class="module-footer">
+            <span>-</span>
+            <a href="./praktikum-16/" class="module-link-action" aria-label="Buka Praktikum 16">
+              Buka Modul &rarr;
+            </a>
+          </div>
+        </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-info">
+        <span class="footer-team">Kelompok YOLO</span>
+        <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
