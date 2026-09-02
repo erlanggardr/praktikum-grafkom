@@ -324,7 +324,7 @@ function renderSiteFooter(isSubPage = false) {
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-info">
-        <span class="footer-team">Kelompok YOLO &bull; Grafika Komputer</span>
+        <span class="footer-team">Kelompok YOLO</span>
         <span>Jalu Cahyo Senodiputro (5025241155) &bull; Erlangga Rizqi Dwi Raswanto (5025241179)</span>
       </div>
       <div class="footer-links">
@@ -399,9 +399,9 @@ function generateIndexHtml() {
 
     <!-- Hero Introduction -->
     <section class="hero-section">
-      <h1 class="hero-title">Daftar Modul Praktikum (1 - 16)</h1>
+      <h1 class="hero-title">Daftar Modul Praktikum</h1>
       <p class="hero-desc">
-        Repositori resmi penugasan mata kuliah Grafika Komputer. Pilih modul praktikum di bawah untuk membuka viewport interaktif, melihat demonstrasi kanvas grafika, dan meninjau implementasi kode.
+        Repositori penugasan mata kuliah Grafika Komputer oleh Kelompok YOLO. Pilih modul praktikum di bawah untuk melihat kanvas interaktif.
       </p>
     </section>
 
