@@ -1,12 +1,12 @@
 /**
  * Praktikum Grafika Komputer - Pertemuan 1
  * Graphics Playground dengan HTML Canvas 2D
- * 
+ *
  * Kelompok: Kelompok YOLO
  * Anggota :
  * 1. JALU CAHYO SENODIPUTRO (NRP 5025241155)
  * 2. ERLANGGA RIZQI DWI RASWANTO (NRP 5025241179)
- * 
+ *
  * Fitur & Tantangan yang Diimplementasikan:
  * - Primitif Dasar 2D: Rectangle, Line, Circle, Triangle (Multi-vertex)
  * - Challenge A: Bouncing Object dengan deteksi 4 batas dinding canvas & transisi warna dinamis
@@ -22,20 +22,16 @@
 (function () {
   'use strict';
 
-  // ==================================================
   // 1. INISIALISASI ELEMEN & CONTEXT
-  // ==================================================
   const canvas = document.getElementById('grafkom-canvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  // Set resolusi internal kanvas grafika
   canvas.width = 800;
   canvas.height = 500;
 
-  // Ambil elemen kontrol UI
   const trailModeSelect = document.getElementById('trail_mode');
   const btnPause = document.getElementById('btn_pause');
   const btnResetPlayer = document.getElementById('btn_reset_player');
@@ -51,23 +47,18 @@
     resDisplay.textContent = `${canvas.width} × ${canvas.height} px`;
   }
 
-  // ==================================================
   // 2. DATA STRUKTUR (Geometri & State Grafika)
-  // ==================================================
-
-  // Palet Warna Vibrant & Apple HIG-compatible
   const colorPalette = [
-    '#0a84ff', // System Blue
-    '#30d158', // System Green
-    '#ff9f0a', // System Orange
-    '#bf5af2', // System Purple
-    '#ff375f', // System Pink
-    '#ffd60a', // System Yellow
-    '#64d2ff', // System Cyan
-    '#ff453a'  // System Red
+    '#0a84ff', // Blue
+    '#30d158', // Green
+    '#ff9f0a', // Orange
+    '#bf5af2', // Purple
+    '#ff375f', // Pink
+    '#ffd60a', // Yellow
+    '#64d2ff', // Cyan
+    '#ff453a'  // Red
   ];
 
-  // 1. Primitive: Rectangle
   const rectangle = {
     x: 60,
     y: 60,
@@ -87,7 +78,6 @@
     lineWidth: 5
   };
 
-  // 3. Primitive: Circle
   const staticCircle = {
     x: 630,
     y: 110,
@@ -96,7 +86,6 @@
     label: 'Circle'
   };
 
-  // 4. Primitive: Triangle (3 Vertices)
   const triangle = {
     v0: { x: 135, y: 280 },
     v1: { x: 60, y: 420 },
@@ -107,7 +96,6 @@
     label: 'Triangle'
   };
 
-  // 5. Objek Bergerak Utama (Moving Ball 1 - Challenge A)
   let ballColorIndex = 3;
   const movingBall = {
     x: 350,
@@ -118,7 +106,6 @@
     color: colorPalette[ballColorIndex]
   };
 
-  // 6. Objek Bergerak Sekunder (Moving Ball 2 - Challenge 34.3)
   const secondaryBall = {
     x: 250,
     y: 200,
@@ -128,7 +115,6 @@
     color: '#64d2ff'
   };
 
-  // 7. Objek Player Terkendali Keyboard (Challenge D)
   let playerColorIndex = 2;
   const player = {
     x: 580,
@@ -139,28 +125,21 @@
     color: colorPalette[playerColorIndex]
   };
 
-  // 8. Data Input Mouse & State Slingshot (Challenge B & 34.1)
   const mouse = { x: 0, y: 0 };
   let firstClickX = 0;
   let firstClickY = 0;
   let isDragging = false;
-  let hasDragged = false; // Membedakan antara click biasa dan drag slingshot
+  let hasDragged = false;
 
-  // Array untuk menyimpan seluruh bola pantul hasil tembakan slingshot
   let circles = [];
 
-  // State Animasi & Keyboard
   let isPaused = false;
   const activeKeys = {};
 
-  // FPS Profiling
   let frameCount = 0;
   let lastFpsUpdate = performance.now();
 
-  // ==================================================
   // 3. UTILITIES & KOORDINAT
-  // ==================================================
-
   function getCanvasCoords(event) {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
@@ -175,10 +154,7 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   }
 
-  // ==================================================
   // 4. RENDERING FUNCTIONS (Menggambar Primitif & Visual)
-  // ==================================================
-
   // Gambar Latar Grid Koordinat Halus
   function drawCoordinateGrid() {
     const step = 40;
@@ -199,7 +175,6 @@
     ctx.restore();
   }
 
-  // 1. Gambar Persegi Panjang
   function drawRectangle() {
     ctx.save();
     ctx.fillStyle = rectangle.color;
@@ -224,7 +199,6 @@
     ctx.restore();
   }
 
-  // 2. Gambar Garis
   function drawLine() {
     ctx.save();
     ctx.beginPath();
@@ -237,7 +211,6 @@
     ctx.shadowBlur = 10;
     ctx.stroke();
 
-    // Titik ujung garis
     ctx.fillStyle = '#ffffff';
     ctx.beginPath();
     ctx.arc(staticLine.x1, staticLine.y1, 4, 0, Math.PI * 2);
@@ -246,7 +219,6 @@
     ctx.restore();
   }
 
-  // 3. Gambar Lingkaran Statis
   function drawCircle() {
     ctx.save();
     ctx.beginPath();
@@ -269,7 +241,6 @@
     ctx.restore();
   }
 
-  // 4. Gambar Segitiga Multi-Vertex
   function drawTriangle() {
     ctx.save();
     ctx.beginPath();
@@ -296,7 +267,6 @@
     ctx.restore();
   }
 
-  // 5. Gambar Bola Utama yang Memantul (Challenge A)
   function drawMovingBall() {
     ctx.save();
     ctx.beginPath();
@@ -311,7 +281,6 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // Highlight pantulan cahaya dalam bola
     ctx.beginPath();
     ctx.arc(
       movingBall.x - movingBall.radius * 0.3,
@@ -325,7 +294,6 @@
     ctx.restore();
   }
 
-  // 6. Gambar Bola Sekunder (Challenge 34.3)
   function drawSecondaryBall() {
     ctx.save();
     ctx.beginPath();
@@ -342,7 +310,6 @@
     ctx.restore();
   }
 
-  // 7. Gambar Player Terkendali Keyboard (Challenge D)
   function drawPlayer() {
     ctx.save();
     ctx.fillStyle = player.color;
@@ -363,7 +330,6 @@
     ctx.restore();
   }
 
-  // 8. Gambar Bola-Bola Hasil Slingshot (Challenge 34.1 & 34.3)
   function drawSlingshotCircles() {
     ctx.save();
     for (const c of circles) {
@@ -382,7 +348,6 @@
     ctx.restore();
   }
 
-  // 9. Gambar Indikator Slingshot & Lintasan Bidik (Challenge B & 34.1)
   function drawSlingshot() {
     if (!isDragging) return;
 
@@ -392,7 +357,6 @@
 
     ctx.save();
 
-    // 1. Garis Lintasan Bidik Putus-Putus (Arah Peluncuran)
     if (dist > 4) {
       const aimLength = Math.min(dist * 1.8, 260);
       const aimX = firstClickX + (dx / dist) * aimLength;
@@ -407,14 +371,12 @@
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Titik target bidik di ujung garis
       ctx.beginPath();
       ctx.arc(aimX, aimY, 4, 0, Math.PI * 2);
       ctx.fillStyle = '#ff453a';
       ctx.fill();
     }
 
-    // 2. Karet Ketapel Elastis (Titik Asal ke Kursor Mouse)
     ctx.beginPath();
     ctx.moveTo(firstClickX, firstClickY);
     ctx.lineTo(mouse.x, mouse.y);
@@ -422,7 +384,6 @@
     ctx.lineWidth = 2.5;
     ctx.stroke();
 
-    // 3. Titik Jangkar Peluncuran (Anchor)
     ctx.beginPath();
     ctx.arc(firstClickX, firstClickY, 6, 0, Math.PI * 2);
     ctx.fillStyle = '#ff453a';
@@ -431,7 +392,6 @@
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // 4. Preview Bola yang Sedang Ditarik
     const previewColor = colorPalette[(circles.length + 4) % colorPalette.length];
     ctx.beginPath();
     ctx.arc(mouse.x, mouse.y, 16, 0, Math.PI * 2);
@@ -445,7 +405,6 @@
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    // 5. Indikator Daya Tembak (Power Gauge)
     if (dist > 10) {
       const power = Math.min(Math.round(dist), 100);
       ctx.fillStyle = '#ffffff';
@@ -456,7 +415,6 @@
     ctx.restore();
   }
 
-  // 10. Indikator Koordinat Mouse Real-time (Challenge E)
   function drawMouseCoordinate() {
     if (coordsDisplay) {
       const u = (mouse.x / canvas.width).toFixed(2);
@@ -465,7 +423,6 @@
     }
   }
 
-  // 11. HUD Status Pause
   function drawPauseHUD() {
     if (!isPaused) return;
 
@@ -488,18 +445,13 @@
     ctx.restore();
   }
 
-  // ==================================================
-  // 5. UPDATE FUNCTIONS (Fisika, Deteksi Batas & Gerak)
-  // ==================================================
-
-  // Update Bola Utama & Deteksi Pantulan 4 Dinding (Challenge A)
+  // 5. UPDATE FUNCTIONS
   function updateMovingBall() {
     movingBall.x += movingBall.speedX;
     movingBall.y += movingBall.speedY;
 
     let bounced = false;
 
-    // Dinding Kiri & Kanan
     if (movingBall.x + movingBall.radius >= canvas.width) {
       movingBall.x = canvas.width - movingBall.radius;
       movingBall.speedX *= -1;
@@ -510,7 +462,6 @@
       bounced = true;
     }
 
-    // Dinding Atas & Bawah
     if (movingBall.y + movingBall.radius >= canvas.height) {
       movingBall.y = canvas.height - movingBall.radius;
       movingBall.speedY *= -1;
@@ -521,14 +472,12 @@
       bounced = true;
     }
 
-    // Ubah warna secara dinamis setiap terjadi pantulan
     if (bounced) {
       ballColorIndex = (ballColorIndex + 1) % colorPalette.length;
       movingBall.color = colorPalette[ballColorIndex];
     }
   }
 
-  // Update Bola Sekunder (Challenge 34.3)
   function updateSecondaryBall() {
     secondaryBall.x += secondaryBall.speedX;
     secondaryBall.y += secondaryBall.speedY;
@@ -550,13 +499,11 @@
     }
   }
 
-  // Update Bola-Bola Slingshot (Challenge 34.1 & 34.3)
   function updateSlingshotCircles() {
     for (const c of circles) {
       c.x += c.speedX;
       c.y += c.speedY;
 
-      // Pantulan dinding horizontal
       if (c.x + c.radius >= canvas.width) {
         c.x = canvas.width - c.radius;
         c.speedX *= -1;
@@ -565,7 +512,6 @@
         c.speedX *= -1;
       }
 
-      // Pantulan dinding vertikal
       if (c.y + c.radius >= canvas.height) {
         c.y = canvas.height - c.radius;
         c.speedY *= -1;
@@ -576,7 +522,6 @@
     }
   }
 
-  // Update Player Menggunakan Keyboard (Challenge D)
   function updatePlayer() {
     if (activeKeys['ArrowLeft'] || activeKeys['KeyA'] || activeKeys['a'] || activeKeys['A']) {
       player.x -= player.speed;
@@ -591,24 +536,20 @@
       player.y += player.speed;
     }
 
-    // Boundary Clamp: Player tidak boleh keluar kanvas
     player.x = Math.max(0, Math.min(canvas.width - player.width, player.x));
     player.y = Math.max(0, Math.min(canvas.height - player.height, player.y));
   }
 
-  // Ganti Warna Player (Challenge C)
   function cyclePlayerColor() {
     playerColorIndex = (playerColorIndex + 1) % colorPalette.length;
     player.color = colorPalette[playerColorIndex];
   }
 
-  // Reset Posisi Player (Challenge D)
   function resetPlayerPosition() {
     player.x = 580;
     player.y = 330;
   }
 
-  // Pause / Resume Toggle
   function togglePause() {
     isPaused = !isPaused;
     if (btnPause) {
@@ -617,11 +558,7 @@
     }
   }
 
-  // ==================================================
-  // 6. EVENT LISTENERS (Input Pengguna)
-  // ==================================================
-
-  // Mouse Move
+  // 6. EVENT LISTENERS
   canvas.addEventListener('mousemove', (e) => {
     const coords = getCanvasCoords(e);
     mouse.x = coords.x;
@@ -636,7 +573,6 @@
     drawMouseCoordinate();
   });
 
-  // Mouse Down: Mulai Slingshot
   canvas.addEventListener('mousedown', (e) => {
     const coords = getCanvasCoords(e);
     isDragging = true;
@@ -645,7 +581,6 @@
     firstClickY = coords.y;
   });
 
-  // Window Mouse Up: Lepaskan Slingshot / Tangani Klik
   window.addEventListener('mouseup', (e) => {
     if (!isDragging) return;
     isDragging = false;
@@ -656,7 +591,6 @@
     const dist = Math.hypot(dx, dy);
 
     if (hasDragged && dist >= 8) {
-      // Slingshot release: kecepatan proporsional dengan tarikan
       const powerFactor = 0.12;
       let vx = dx * powerFactor;
       let vy = dy * powerFactor;
@@ -678,12 +612,10 @@
         color: spawnColor
       });
     } else {
-      // Klik biasa tanpa tarikan -> ganti warna player
       cyclePlayerColor();
     }
   });
 
-  // Keyboard Key Down
   window.addEventListener('keydown', (e) => {
     const controlledKeys = [
       'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown',
@@ -691,7 +623,6 @@
       ' ', 'Space'
     ];
 
-    // Mencegah scroll browser saat menekan tombol panah / spasi ketika berinteraksi
     if (controlledKeys.includes(e.key) || controlledKeys.includes(e.code)) {
       if (document.activeElement === document.body || document.activeElement === canvas) {
         e.preventDefault();
@@ -714,13 +645,11 @@
     }
   });
 
-  // Keyboard Key Up
   window.addEventListener('keyup', (e) => {
     activeKeys[e.key] = false;
     activeKeys[e.code] = false;
   });
 
-  // UI Control Buttons
   if (btnPause) {
     btnPause.addEventListener('click', togglePause);
   }
@@ -766,12 +695,8 @@
     });
   }
 
-  // ==================================================
-  // 7. ANIMATION LOOP (Siklus Render Frame Grafika)
-  // ==================================================
-
+  // 7. ANIMATION LOOP
   function animate(now) {
-    // 1. Hitung FPS Real-time
     frameCount++;
     if (now - lastFpsUpdate >= 1000) {
       if (fpsDisplay) {
@@ -781,7 +706,6 @@
       lastFpsUpdate = now;
     }
 
-    // 2. Evaluasi Mode Jejak Canvas (Challenge 34.2)
     const mode = trailModeSelect ? trailModeSelect.value : 'no_trail';
     if (mode === 'no_trail') {
       clearCanvas();
@@ -790,9 +714,7 @@
       ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
-    // Jika mode 'trail' (Persistent Trail), canvas tidak dibersihkan
 
-    // 3. Update Fisika & Logika (Hanya jika tidak di-pause)
     if (!isPaused) {
       updateMovingBall();
       updateSecondaryBall();
@@ -800,7 +722,6 @@
       updatePlayer();
     }
 
-    // 4. Render Semua Objek Grafika
     drawCoordinateGrid();
     drawRectangle();
     drawLine();
@@ -812,15 +733,10 @@
     drawPlayer();
     drawSlingshot();
 
-    // 5. Render HUD Overlay jika di-pause
     drawPauseHUD();
 
-    // Loop Frame Berikutnya
     requestAnimationFrame(animate);
   }
 
-  // Mulai Animation Loop
   requestAnimationFrame(animate);
-
-  console.log('Praktikum 1: Graphics Playground berhasil diinisialisasi.');
 })();
