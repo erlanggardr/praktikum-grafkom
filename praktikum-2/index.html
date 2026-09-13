@@ -1,14 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WebGL Fundamental</title>
+    <meta name="theme-color" content="#07111f" />
+    <title>Praktikum 02 — Kinetic Primitives</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
-    <canvas id="glCanvas" width="800" height="600"> </canvas>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✦</span><div><p class="eyebrow">Grafika Komputer · 2026</p><h1>Kinetic <em>Primitives</em></h1></div></div>
+        <div class="status"><span class="status-dot"></span> WebGL2 aktif</div>
+      </header>
+
+      <section class="workspace">
+        <div class="stage-wrap">
+          <div class="stage-label"><span>LIVE CANVAS</span><span>klik untuk menambah bentuk</span></div>
+          <canvas id="glCanvas" width="900" height="620" aria-label="Kanvas WebGL interaktif"></canvas>
+          <div class="canvas-hint">WASD / ↑ ↓ ← → <span>gerakkan orb putih</span></div>
+        </div>
+
+        <aside class="control-panel">
+          <div class="panel-intro"><p class="eyebrow">LAB 02 / DRAWING</p><h2>Ruang <span>Eksperimen</span></h2><p>Susun geometri primitif, lalu lepaskan ke ruang koordinat.</p></div>
+          <div class="control-group"><div class="group-title"><span>01</span> PRIMITIF</div>
+            <div class="segmented" role="group" aria-label="Pilih primitif"><button class="choice active" data-primitive="triangle">Triangle</button><button class="choice" data-primitive="lines">Lines</button><button class="choice" data-primitive="points">Points</button></div>
+          </div>
+          <div class="control-group"><div class="group-title"><span>02</span> WARNA AKSEN</div>
+            <div class="swatches"><button class="swatch red" data-color="red" aria-label="Merah"></button><button class="swatch green" data-color="green" aria-label="Hijau"></button><button class="swatch blue" data-color="blue" aria-label="Biru"></button><button class="swatch cyan active" data-color="cyan" aria-label="Sian"></button><button class="swatch random" data-color="random" aria-label="Warna acak">?</button></div>
+          </div>
+          <div class="control-group"><div class="group-title"><span>03</span> MODE RENDER</div>
+            <button class="mode-toggle" id="modeToggle"><span class="mode-icon">◈</span><span><strong id="modeText">Dynamic colour</strong><small>ganti ke wireframe</small></span><span class="toggle-track"><i></i></span></button>
+          </div>
+          <div class="readout"><div><span>FPS</span><strong id="fpsValue">—</strong></div><div><span>OBJEK</span><strong id="countValue">3</strong></div><div><span>NDC X / Y</span><strong id="mouseValue">0.00 / 0.00</strong></div></div>
+          <p class="tip"><span>⌁</span> Setiap klik membuat pola vertex prosedural baru.</p>
+        </aside>
+      </section>
+      <footer><span>PRKT-02</span><span>Primitive motion study</span><span>WebGL / GLSL ES 3.00</span></footer>
+    </main>
 
     <script type="module" src="src/main.js"></script>
   </body>
