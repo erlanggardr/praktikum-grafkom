@@ -1,45 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07111f" />
-    <title>Praktikum 02 — Kinetic Primitives</title>
-    <link rel="stylesheet" href="src/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Praktikum 2 WebGL Fundamental Playground Kelompok YOLO.">
+  <title>Praktikum 2: WebGL Fundamental Playground — Kelompok YOLO</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-group"><div class="brand-title"><a href="../" id="nav-home-link">Praktikum Grafika Komputer Kelompok YOLO</a><span class="brand-separator">/</span><span class="brand-current-page">Praktikum 2</span></div></div>
+      <nav class="header-nav" aria-label="Navigasi Praktikum">
+        <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
+          <option value="../">-- Pilih Praktikum --</option>
+          <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+          <option value="../praktikum-2/" selected>Praktikum 2: WebGL Fundamental Playground</option>
+          <option value="../praktikum-3/">Praktikum 3: Interactive Transformation &amp; Coordinate System dengan WebGL</option>
+          <option value="../praktikum-4/">Praktikum 4: Camera, Projection &amp; 3D dengan WebGL</option>
+          <option value="../praktikum-5/">Praktikum 5: Lighting, Shading &amp; Texture pada WebGL</option>
+          <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+          <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application</option>
+          <option value="../praktikum-8/">Praktikum 8</option><option value="../praktikum-9/">Praktikum 9</option><option value="../praktikum-10/">Praktikum 10</option><option value="../praktikum-11/">Praktikum 11</option><option value="../praktikum-12/">Praktikum 12</option><option value="../praktikum-13/">Praktikum 13</option><option value="../praktikum-14/">Praktikum 14</option><option value="../praktikum-15/">Praktikum 15</option><option value="../praktikum-16/">Praktikum 16</option>
+        </select>
+        <button id="theme-toggle" class="btn-icon" title="Ganti tema" aria-label="Ganti tema">☼</button>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <main class="app-shell">
-      <header class="topbar">
-        <div class="brand"><span class="brand-mark">✦</span><div><p class="eyebrow">Grafika Komputer · 2026</p><h1>Kinetic <em>Primitives</em></h1></div></div>
-        <div class="status"><span class="status-dot"></span> WebGL2 aktif</div>
-      </header>
+  <main class="container">
+    <section class="team-banner" aria-label="Informasi Kelompok"><div class="team-banner-header"><span class="team-tag">Kelompok YOLO</span></div><div class="team-members-grid"><div class="member-card"><div class="member-info"><span class="member-name">JALU CAHYO SENODIPUTRO</span><span class="member-nrp">NRP 5025241155</span></div></div><div class="member-card"><div class="member-info"><span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span><span class="member-nrp">NRP 5025241179</span></div></div></div></section>
 
-      <section class="workspace">
-        <div class="stage-wrap">
-          <div class="stage-label"><span>LIVE CANVAS</span><span>klik untuk menambah bentuk</span></div>
-          <canvas id="glCanvas" width="900" height="620" aria-label="Kanvas WebGL interaktif"></canvas>
-          <div class="canvas-hint">WASD / ↑ ↓ ← → <span>gerakkan orb putih</span></div>
-        </div>
+    <section class="workbench-header"><div><div class="breadcrumb-trail"><a href="../">Daftar Modul</a><span>›</span><span>WebGL Fundamental</span><span>›</span><span class="status-badge finished">Finished</span></div><div class="workbench-title-row"><h1 class="workbench-title">Praktikum 2: WebGL Fundamental Playground</h1></div></div><div class="workbench-pagination"><a href="../praktikum-1/" class="nav-btn" id="nav-prev-btn">← Praktikum 1</a><a href="../" class="nav-btn">Daftar</a><a href="../praktikum-3/" class="nav-btn" id="nav-next-btn">Praktikum 3 →</a></div></section>
 
-        <aside class="control-panel">
-          <div class="panel-intro"><p class="eyebrow">LAB 02 / DRAWING</p><h2>Ruang <span>Eksperimen</span></h2><p>Susun geometri primitif, lalu lepaskan ke ruang koordinat.</p></div>
-          <div class="control-group"><div class="group-title"><span>01</span> PRIMITIF</div>
-            <div class="segmented" role="group" aria-label="Pilih primitif"><button class="choice active" data-primitive="triangle">Triangle</button><button class="choice" data-primitive="lines">Lines</button><button class="choice" data-primitive="points">Points</button></div>
-          </div>
-          <div class="control-group"><div class="group-title"><span>02</span> WARNA AKSEN</div>
-            <div class="swatches"><button class="swatch red" data-color="red" aria-label="Merah"></button><button class="swatch green" data-color="green" aria-label="Hijau"></button><button class="swatch blue" data-color="blue" aria-label="Biru"></button><button class="swatch cyan active" data-color="cyan" aria-label="Sian"></button><button class="swatch random" data-color="random" aria-label="Warna acak">?</button></div>
-          </div>
-          <div class="control-group"><div class="group-title"><span>03</span> MODE RENDER</div>
-            <button class="mode-toggle" id="modeToggle"><span class="mode-icon">◈</span><span><strong id="modeText">Dynamic colour</strong><small>ganti ke wireframe</small></span><span class="toggle-track"><i></i></span></button>
-          </div>
-          <div class="readout"><div><span>FPS</span><strong id="fpsValue">—</strong></div><div><span>OBJEK</span><strong id="countValue">3</strong></div><div><span>NDC X / Y</span><strong id="mouseValue">0.00 / 0.00</strong></div></div>
-          <p class="tip"><span>⌁</span> Setiap klik membuat pola vertex prosedural baru.</p>
-        </aside>
-      </section>
-      <footer><span>PRKT-02</span><span>Primitive motion study</span><span>WebGL / GLSL ES 3.00</span></footer>
-    </main>
+    <section class="workbench-viewport" aria-label="Viewport WebGL interaktif">
+      <div class="viewport-toolbar"><div class="toolbar-info"><div class="toolbar-stat"><span>Viewport:</span><span id="res-stat" class="toolbar-stat-val">WebGL2</span></div><div class="toolbar-stat"><span>FPS:</span><span id="fps-stat" class="toolbar-stat-val"><span id="fpsValue">—</span> FPS</span></div><div class="toolbar-stat"><span>Mode:</span><span class="toolbar-stat-val" id="toolbar-mode">Dynamic colour</span></div></div><div class="toolbar-actions"><span class="live-pill"><i></i> LIVE</span></div></div>
+      <div class="canvas-wrapper"><canvas id="glCanvas" class="canvas-target" width="900" height="620" aria-label="Kanvas WebGL interaktif"></canvas><div id="coords-display" class="canvas-coords-indicator">NDC: <span id="mouseValue">0.00 / 0.00</span></div></div>
+      <div class="playground-control-bar"><div class="control-group-row"><span class="control-label">Primitif</span><div class="segmented" role="group" aria-label="Pilih primitif"><button class="choice active" data-primitive="triangle">Triangle</button><button class="choice" data-primitive="lines">Lines</button><button class="choice" data-primitive="points">Points</button></div></div><div class="control-group-row"><span class="control-label">Warna</span><div class="swatches"><button class="swatch red" data-color="red" aria-label="Merah"></button><button class="swatch green" data-color="green" aria-label="Hijau"></button><button class="swatch blue" data-color="blue" aria-label="Biru"></button><button class="swatch cyan active" data-color="cyan" aria-label="Sian"></button><button class="swatch random" data-color="random" aria-label="Acak">?</button></div></div><button class="control-btn btn-accent" id="modeToggle"><span id="modeText">Dynamic colour</span><span class="mode-switch">↔</span></button></div>
+    </section>
 
-    <script type="module" src="src/main.js"></script>
-  </body>
+    <section class="playground-shortcuts" aria-label="Petunjuk interaksi"><div class="shortcut-chip"><div class="shortcut-keys"><span class="key-cap">W A S D</span><span class="key-separator">/</span><span class="key-cap">↑ ← ↓ →</span></div><span class="shortcut-desc">Gerakkan orb utama</span></div><div class="shortcut-chip"><div class="shortcut-keys"><span class="key-cap">Klik Kanvas</span></div><span class="shortcut-desc">Tambah bentuk di posisi kursor</span></div><div class="shortcut-chip"><div class="shortcut-keys"><span class="key-cap">FPS</span><span class="key-cap" id="countValue">3</span></div><span class="shortcut-desc">Performa dan jumlah objek</span></div></section>
+    <section class="workbench-meta-panel"><div class="meta-box"><h2 class="meta-box-title">Tentang eksperimen</h2><div class="meta-box-content"><p>Playground ini memperlihatkan pipeline WebGL2: shader, buffer vertex, warna per-vertex, dan render loop real-time.</p><ul><li>Eksplorasi Triangle, Lines, dan Points.</li><li>Klik kanvas untuk membuat pola prosedural baru.</li><li>Gunakan keyboard untuk translasi orb utama.</li></ul></div></div><div class="meta-box"><h2 class="meta-box-title">Spesifikasi</h2><table class="tech-specs-table"><tbody><tr><th>Modul</th><td>Praktikum 2</td></tr><tr><th>Renderer</th><td>WebGL2</td></tr><tr><th>Warna</th><td>Vertex color</td></tr><tr><th>Status</th><td>Finished</td></tr></tbody></table></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><div class="footer-info"><span class="footer-team">Kelompok YOLO</span><span>Jalu Cahyo Senodiputro · Erlangga Rizqi Dwi Raswanto</span></div><div class="footer-links"><a href="../">Direktori Praktikum</a><a href="https://github.com/erlanggardr/praktikum-grafkom" target="_blank" rel="noopener">GitHub Repository →</a></div></div></footer>
+  <script type="module" src="../assets/js/main.js"></script><script type="module" src="src/main.js"></script>
+</body>
 </html>

@@ -216,15 +216,23 @@ document.querySelectorAll("[data-color]").forEach((button) =>
       .forEach((item) => item.classList.toggle("active", item === button));
   }),
 );
-document.querySelector("#modeToggle").addEventListener("click", () => {
+const modeToggle = document.querySelector("#modeToggle");
+modeToggle.setAttribute("aria-pressed", "false");
+modeToggle.addEventListener("click", () => {
   wireframe = !wireframe;
-  document.querySelector("#modeText").textContent = wireframe
-    ? "Wireframe mode"
-    : "Dynamic colour";
-  document.querySelector("#modeToggle small").textContent = wireframe
-    ? "triangle outline active"
-    : "ganti ke wireframe";
-  document.querySelector(".toggle-track").classList.toggle("on", wireframe);
+  const label = wireframe ? "Wireframe mode" : "Dynamic colour";
+  const modeText = document.querySelector("#modeText");
+  const switchIndicator = modeToggle.querySelector(".mode-switch");
+  modeText.textContent = label;
+  const toolbarMode = document.querySelector("#toolbar-mode");
+  if (toolbarMode) toolbarMode.textContent = label;
+  modeToggle.setAttribute("aria-pressed", String(wireframe));
+  modeToggle.setAttribute("aria-label", `Mode render: ${label}`);
+  modeToggle.title = wireframe ? "Kembali ke warna dinamis" : "Aktifkan wireframe";
+  if (switchIndicator) {
+    switchIndicator.textContent = wireframe ? "◌" : "↔";
+    switchIndicator.classList.toggle("is-wireframe", wireframe);
+  }
 });
 canvas.addEventListener("pointermove", (event) => {
   const rect = canvas.getBoundingClientRect();
