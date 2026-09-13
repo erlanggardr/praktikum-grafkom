@@ -228,7 +228,9 @@ modeToggle.addEventListener("click", () => {
   if (toolbarMode) toolbarMode.textContent = label;
   modeToggle.setAttribute("aria-pressed", String(wireframe));
   modeToggle.setAttribute("aria-label", `Mode render: ${label}`);
-  modeToggle.title = wireframe ? "Kembali ke warna dinamis" : "Aktifkan wireframe";
+  modeToggle.title = wireframe
+    ? "Kembali ke warna dinamis"
+    : "Aktifkan wireframe";
   if (switchIndicator) {
     switchIndicator.textContent = wireframe ? "◌" : "↔";
     switchIndicator.classList.toggle("is-wireframe", wireframe);
