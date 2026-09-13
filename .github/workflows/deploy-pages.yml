@@ -1,0 +1,73 @@
+name: Deploy static site to Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: praktikum-2/pnpm-lock.yaml
+
+      - name: Build praktikum-2
+        working-directory: praktikum-2
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Assemble Pages artifact
+        env:
+          SITE_DIR: ${{ runner.temp }}/_site
+        run: |
+          rm -rf "$SITE_DIR"
+          mkdir -p "$SITE_DIR"
+          rsync -a \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='node_modules/' \
+            --exclude='scripts/' \
+            --exclude='praktikum-2/' \
+            ./ "$SITE_DIR/"
+          mkdir -p "$SITE_DIR/praktikum-2"
+          cp -R praktikum-2/dist/. "$SITE_DIR/praktikum-2/"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/_site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
