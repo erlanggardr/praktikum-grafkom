@@ -132,6 +132,16 @@
   .canvas-wrapper {
     aspect-ratio: 4/3;
   }
+  .playground-control-bar .segmented {
+    flex: 1;
+    min-width: 0;
+  }
+  .playground-control-bar .choice {
+    flex: 1;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10px;
+  }
 }
 @media (max-width: 520px) {
   .brand-current-page,

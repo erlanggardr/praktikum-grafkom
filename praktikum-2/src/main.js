@@ -2,8 +2,10 @@ const canvas = document.querySelector("#glCanvas");
 const fpsEl = document.querySelector("#fpsValue");
 const countEl = document.querySelector("#countValue");
 const mouseEl = document.querySelector("#mouseValue");
+
 const gl = initializeWebGL();
 const program = createProgram(gl, createShaders(gl));
+
 const locations = {
   position: gl.getAttribLocation(program, "a_position"),
   color: gl.getAttribLocation(program, "a_color"),
@@ -11,6 +13,7 @@ const locations = {
   scale: gl.getUniformLocation(program, "u_scale"),
   rotation: gl.getUniformLocation(program, "u_rotation"),
 };
+
 const buffer = createBuffers(gl);
 setupAttributes(gl, buffer, locations);
 
@@ -28,6 +31,7 @@ let lastTime = performance.now();
 let frames = 0;
 let fpsClock = lastTime;
 const keys = new Set();
+
 const objects = [
   {
     type: "triangle",
@@ -66,6 +70,7 @@ function initializeWebGL() {
   context.blendFunc(context.SRC_ALPHA, context.ONE_MINUS_SRC_ALPHA);
   return context;
 }
+
 function createShaders(context) {
   const vertex = `#version 300 es
     in vec2 a_position; in vec3 a_color; out vec3 v_color;
@@ -79,6 +84,7 @@ function createShaders(context) {
     fragment: compile(context, context.FRAGMENT_SHADER, fragment),
   };
 }
+
 function compile(context, kind, source) {
   const shader = context.createShader(kind);
   context.shaderSource(shader, source);
@@ -87,6 +93,7 @@ function compile(context, kind, source) {
     throw new Error(context.getShaderInfoLog(shader));
   return shader;
 }
+
 function createProgram(context, shaders) {
   const value = context.createProgram();
   context.attachShader(value, shaders.vertex);
@@ -96,11 +103,13 @@ function createProgram(context, shaders) {
     throw new Error(context.getProgramInfoLog(value));
   return value;
 }
+
 function createBuffers(context) {
   const value = context.createBuffer();
   context.bindBuffer(context.ARRAY_BUFFER, value);
   return value;
 }
+
 function setupAttributes(context, value, loc) {
   context.bindBuffer(context.ARRAY_BUFFER, value);
   context.enableVertexAttribArray(loc.position);
@@ -117,6 +126,21 @@ function pattern(type, color, seed) {
     push(0, 1, 1.1);
     push(-0.9, -0.65, 0.72);
     push(0.9, -0.65, 0.9);
+  } else if (type === "rectangle") {
+    // A four-vertex fan is a filled quad; LINE_LOOP uses the same contour.
+    push(-0.86, 0.68, 0.95);
+    push(0.86, 0.68, 0.78);
+    push(0.86, -0.68, 1.05);
+    push(-0.86, -0.68, 0.82);
+  } else if (type === "circle") {
+    // Keep the center for TRIANGLE_FAN, then generate a smooth closed contour.
+    push(0, 0, 0.92);
+    const segments = 48;
+    for (let i = 0; i <= segments; i++) {
+      const angle = (i / segments) * Math.PI * 2 + seed * 0.08;
+      const tint = 0.74 + (i % 5) * 0.055;
+      push(Math.cos(angle) * 0.86, Math.sin(angle) * 0.86, tint);
+    }
   } else if (type === "lines") {
     for (let i = 0; i < 4; i++) {
       const a = (i * Math.PI) / 2 + seed;
@@ -132,6 +156,7 @@ function pattern(type, color, seed) {
   }
   return new Float32Array(verts);
 }
+
 function update(dt) {
   const speed = 1.05;
   const move = [0, 0];
@@ -162,6 +187,7 @@ function update(dt) {
     obj.phase += dt * (index + 1);
   });
 }
+
 function draw() {
   gl.clearColor(0.018, 0.047, 0.09, 1);
   gl.clear(gl.COLOR_BUFFER_BIT);
@@ -179,12 +205,23 @@ function draw() {
         ? wireframe
           ? gl.LINE_LOOP
           : gl.TRIANGLES
+        : obj.type === "rectangle"
+          ? wireframe
+            ? gl.LINE_LOOP
+            : gl.TRIANGLE_FAN
+        : obj.type === "circle"
+          ? wireframe
+            ? gl.LINE_LOOP
+            : gl.TRIANGLE_FAN
         : obj.type === "lines"
           ? gl.LINES
           : gl.POINTS;
-    gl.drawArrays(mode, 0, data.length / 5);
+    const vertexCount = data.length / 5;
+    gl.drawArrays(mode, obj.type === "circle" && wireframe ? 1 : 0,
+      obj.type === "circle" && wireframe ? vertexCount - 1 : vertexCount);
   });
 }
+
 function render(time) {
   const dt = Math.min((time - lastTime) / 1000, 0.04);
   lastTime = time;
@@ -208,6 +245,7 @@ document.querySelectorAll("[data-primitive]").forEach((button) =>
       .forEach((item) => item.classList.toggle("active", item === button));
   }),
 );
+
 document.querySelectorAll("[data-color]").forEach((button) =>
   button.addEventListener("click", () => {
     selectedColor = button.dataset.color;
@@ -216,6 +254,7 @@ document.querySelectorAll("[data-color]").forEach((button) =>
       .forEach((item) => item.classList.toggle("active", item === button));
   }),
 );
+
 const modeToggle = document.querySelector("#modeToggle");
 modeToggle.setAttribute("aria-pressed", "false");
 modeToggle.addEventListener("click", () => {
@@ -236,6 +275,7 @@ modeToggle.addEventListener("click", () => {
     switchIndicator.classList.toggle("is-wireframe", wireframe);
   }
 });
+
 canvas.addEventListener("pointermove", (event) => {
   const rect = canvas.getBoundingClientRect();
   mouseNdc = [
@@ -244,6 +284,7 @@ canvas.addEventListener("pointermove", (event) => {
   ];
   mouseEl.textContent = `${mouseNdc[0].toFixed(2)} / ${mouseNdc[1].toFixed(2)}`;
 });
+
 canvas.addEventListener("pointerdown", (event) => {
   if (event.button !== 0) return;
   const color =
@@ -263,6 +304,7 @@ canvas.addEventListener("pointerdown", (event) => {
   });
   countEl.textContent = objects.length;
 });
+
 window.addEventListener("keydown", (event) => {
   if (
     ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(event.key)
@@ -273,11 +315,13 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keyup", (event) =>
   keys.delete(event.key.toLowerCase()),
 );
+
 window.addEventListener("resize", () => {
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = canvas.clientWidth * ratio;
   canvas.height = canvas.clientHeight * ratio;
   gl.viewport(0, 0, canvas.width, canvas.height);
 });
+
 window.dispatchEvent(new Event("resize"));
 requestAnimationFrame(render);
