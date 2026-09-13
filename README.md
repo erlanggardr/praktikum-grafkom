@@ -19,8 +19,8 @@ Daftar modul praktikum disinkronisasi langsung dari [Learning Hub Grafika Komput
 
 | Modul | Topik / Pembahasan Praktikum | Kategori | Endpoint URL | Status |
 | :---: | :--- | :--- | :--- | :---: |
-| **P01** | Graphics Playground dengan HTML Canvas 2D | HTML Canvas 2D | `/praktikum-1/` | On Progress |
-| **P02** | WebGL Fundamental Playground | WebGL Fundamental | `/praktikum-2/` | On Progress |
+| **P01** | Graphics Playground dengan HTML Canvas 2D | HTML Canvas 2D | `/praktikum-1/` | Finished |
+| **P02** | WebGL Fundamental Playground | WebGL Fundamental | `/praktikum-2/` | Finished |
 | **P03** | Interactive Transformation & Coordinate System | Transformasi & Sistem Koordinat | `/praktikum-3/` | On Progress |
 | **P04** | Camera, Projection & 3D dengan WebGL | Kamera & Proyeksi 3D | `/praktikum-4/` | On Progress |
 | **P05** | Lighting, Shading & Texture pada WebGL | Lighting, Shading & Texture | `/praktikum-5/` | On Progress |
