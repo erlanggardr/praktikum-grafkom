@@ -324,25 +324,129 @@
       </div>
     </section>
 
-    <!-- Deskripsi & Analisis Pembelajaran -->
+    <!-- Metadata & Implementation Specs -->
     <section class="workbench-meta-panel">
       <div class="meta-box">
         <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
         <div class="meta-box-content">
           <p>
-            Praktikum 3 berfokus pada pemahaman bahwa vertex geometry harus tetap berada pada <strong>local coordinate space</strong> (origin di $(0,0)$) dalam satu GPU buffer bersama. Seluruh perubahan posisi, orientasi, dan ukuran dikalkulasi menggunakan <strong>Model Matrix 3&times;3</strong> yang dikirimkan ke vertex shader melalui uniform.
+            Penerapan sistem koordinat lokal vs world dan transformasi geometri (translasi, rotasi, skala) menggunakan matriks transformasi 3&times;3 yang dikirimkan ke GPU sebagai uniform pada WebGL2.
           </p>
           <ul>
-            <li><strong>Local Coordinate &amp; Shared GPU Buffer</strong>: Segitiga didefinisikan sekali di local space dan digunakan bersama oleh Object A, Object B, Child, dan Orbit Satellite tanpa memodifikasi vertex buffer setiap frame.</li>
-            <li><strong>Affine Matrix Composition</strong>: Komposisi translasi, rotasi, dan penskalaan column-major $3\times3$ dengan koordinat homogen $(x, y, 1.0)$.</li>
-            <li><strong>Transform Order Comparison</strong>: Membuktikan secara interaktif bahwa $T \times R \times S$ (rotasi in-place) menghasilkan posisi berbeda dibanding $R \times T \times S$ (rotasi mengorbit world origin).</li>
-            <li><strong>Hierarki Parent-Child</strong>: Objek anak ditransformasikan menggunakan perkalian matriks $\mathbf{M}_{\text{child\_world}} = \mathbf{M}_{\text{parent\_world}} \times \mathbf{M}_{\text{child\_local}}$.</li>
-            <li><strong>Pause &amp; Delta Time</strong>: Gerakan halus independen frame rate dengan kemampuan freeze seketika (tombol <code>P</code>).</li>
+            <li>Menjelaskan perbedaan mendasar antara local coordinate dan world coordinate.</li>
+            <li>Memahami alur ruang koordinat: Local &rarr; World &rarr; View &rarr; Clip &rarr; NDC &rarr; Screen.</li>
+            <li>Membuat fungsi pembentuk matriks affine 2D (translasi, rotasi, skala) berformat column-major 3&times;3 Float32Array.</li>
+            <li>Memahami peran koordinat homogen 2D (x, y, 1.0) dan uniform u_matrix pada Vertex Shader.</li>
+            <li>Melakukan perkalian matriks untuk membentuk Model Matrix (M = T &times; R &times; S).</li>
+            <li>Membuktikan pengaruh urutan matriks (Transform Order Comparison: TRS in-place vs RT orbit).</li>
+            <li>Mengamati titik pivot origin lokal dan fungsinya dalam rotasi serta penskalaan objek.</li>
+            <li>Membangun hierarki Parent-Child dan satelit orbit berbasis rantai perkalian matriks.</li>
+            <li>Mengontrol translasi, rotasi, dan skala kontinu menggunakan state-based keyboard input dan deltaTime.</li>
           </ul>
+
+          <h3 class="meta-box-title" style="margin-top: 24px;">Fitur &amp; Tantangan yang Diimplementasikan</h3>
+          <div class="challenges-grid">
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 1: WebGL2 Context &amp; Shared GPU Geometry Buffer</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Geometri segitiga lokal didefinisikan satu kali pada origin (0, 0) dalam GPU buffer (gl.STATIC_DRAW) dan digunakan bersama oleh seluruh objek tanpa memodifikasi vertex buffer pada CPU per frame.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 2: Pustaka Matriks 3×3 Column-Major &amp; Uniform Matrix</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Fungsi matematika matriks 3&times;3 lengkap (identity, translation, rotation, scaling, multiply) berstandar WebGL (Float32Array) dikirim ke vertex shader melalui uniform u_matrix dengan koordinat homogen vec3(a_position, 1.0).</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 3: Continuous State-Based Input &amp; Delta Time</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Translasi (WASD/Arrow), rotasi (Q/E), penskalaan seragam (+/-), dan penskalaan non-uniform (Z/X untuk sumbu X, C/V untuk sumbu Y) dengan pergerakan kontinu dikalikan deltaTime serta pembatasan batas layar (NDC clamping).</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 4: Objek B dengan Animasi Rotasi &amp; Pulsasi Otomatis</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Object B berputar kontinu sebesar 70°/s dan mengalami animasi penskalaan sinusoidal berdenyut (1.0 + sin(2t) &times; 0.25) pada posisi tetap (0.42, 0.12) menggunakan geometry buffer yang sama dengan Object A.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Tambahan: World Coordinate Axes &amp; Local Pivot Markers</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Visualisasi garis sumbu koordinat dunia X dan Y melintasi world origin (0, 0), serta penanda titik pivot lokal pada origin setiap objek menggunakan gl.POINTS untuk memvalidasi pusat rotasi.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge A: Reset Transform (Tombol R)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Mereset posisi, sudut rotasi, dan skala Object A seketika ke konfigurasi awal default (-0.38, 0.00, 0.0°, 1.00, 1.00) baik melalui tombol keyboard 'R' maupun tombol pada toolbar control.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge B: Transform Presets (Tombol 1, 2, 3)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Tiga konfigurasi preset instan dengan variasi koordinat translasi, sudut rotasi, dan rasio skala non-uniform yang dapat diaktifkan via keyboard '1', '2', '3' atau tombol segmented preset.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge C: Toggle Transform Order (Tombol T)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Menukar urutan perkalian matriks secara dinamis antara Mode 1: T &times; R &times; S (rotasi lokal di tempat) dan Mode 2: R &times; T &times; S (translasi ikut terrotasi mengelilingi world origin membentuk orbit).</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge D: Mouse Click Translation to NDC</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Konversi koordinat klik piksel kursor mouse ke Normalized Device Coordinates (NDC) [-1.0, 1.0] dan mentranslasikan Object A seketika ke titik klik tersebut.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge E: Hierarchical Parent &amp; Child (Tombol J)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Objek anak hierarkis kuning terikat pada Object A sebagai parent menggunakan rumus perkalian matriks M_child_world = M_parent_world &times; M_child_local.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge F: Simple Orbit Satellite (Tombol O)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Satelit hijau mengorbit mengelilingi objek pusat melalui rantai komposisi perkalian matriks M_center &times; R_orbit &times; T_radius &times; S_sat.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Fitur Tambahan: Render Freeze / Pause (Tombol P) &amp; Speed Tuning</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Fitur jeda seketika (freeze) seluruh kalkulasi render loop dan animasi via tombol 'P', serta dashboard slider interaktif untuk tuning dinamis kecepatan translasi, rotasi, dan skala.</p>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="meta-box">
-        <h2 class="meta-box-title">Spesifikasi Modul</h2>
+        <h2 class="meta-box-title">Spesifikasi Praktikum</h2>
         <table class="tech-specs-table">
           <tbody>
             <tr>
@@ -354,7 +458,11 @@
               <td>Transformasi Geometri &amp; Sistem Koordinat 2D</td>
             </tr>
             <tr>
-              <th>Renderer Pipeline</th>
+              <th>Status Praktikum</th>
+              <td>Finished</td>
+            </tr>
+            <tr>
+              <th>Renderer</th>
               <td>WebGL2 (GLSL ES 3.00)</td>
             </tr>
             <tr>
@@ -362,7 +470,7 @@
               <td>3×3 Column-Major (Float32Array)</td>
             </tr>
             <tr>
-              <th>Komposisi Order</th>
+              <th>Transform Order</th>
               <td>TRS (In-Place) &amp; RT (Orbit Origin)</td>
             </tr>
             <tr>
@@ -372,10 +480,6 @@
             <tr>
               <th>Challenge Lengkap</th>
               <td>Challenge A, B, C, D, E, F (Semua Selesai)</td>
-            </tr>
-            <tr>
-              <th>Status Verifikasi</th>
-              <td>Finished (Tested Local &amp; Server)</td>
             </tr>
           </tbody>
         </table>
