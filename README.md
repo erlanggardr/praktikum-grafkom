@@ -1,4 +1,4 @@
-﻿# Praktikum Grafika Komputer
+# Praktikum Grafika Komputer
 
 Repositori Kelompok YOLO untuk penugasan mata kuliah Grafika Komputer Kelas B 2026 Teknik Informatika, Institut Teknologi Sepuluh Nopember.
 
@@ -21,7 +21,7 @@ Daftar modul praktikum disinkronisasi langsung dari [Learning Hub Grafika Komput
 | :---: | :--- | :--- | :--- | :---: |
 | **P01** | Graphics Playground dengan HTML Canvas 2D | HTML Canvas 2D | `/praktikum-1/` | Finished |
 | **P02** | WebGL Fundamental Playground | WebGL Fundamental | `/praktikum-2/` | Finished |
-| **P03** | Interactive Transformation & Coordinate System | Transformasi & Sistem Koordinat | `/praktikum-3/` | On Progress |
+| **P03** | Interactive Transformation & Coordinate System | Transformasi & Sistem Koordinat | `/praktikum-3/` | Finished |
 | **P04** | Camera, Projection & 3D dengan WebGL | Kamera & Proyeksi 3D | `/praktikum-4/` | On Progress |
 | **P05** | Lighting, Shading & Texture pada WebGL | Lighting, Shading & Texture | `/praktikum-5/` | On Progress |
 | **P06** | Introduction to Three.js — Mini 3D Scene | Three.js Fundamental | `/praktikum-6/` | On Progress |

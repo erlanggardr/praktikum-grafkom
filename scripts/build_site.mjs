@@ -27,7 +27,7 @@ const PRAKTIKUM_DATA = [
     title: "WebGL Fundamental Playground",
     category: "WebGL Fundamental",
     hasPraktikum: true,
-    status: "progress",
+    status: "finished",
     statusLabel: "Finished",
     desc: "Implementasi pipeline grafis WebGL2 dasar di browser: inisialisasi context, alokasi vertex data dan buffer pada GPU, penulisan Vertex & Fragment Shader, compiling/linking shader, dan rendering primitif triangle dengan animasi loop.",
     details: [
@@ -45,8 +45,8 @@ const PRAKTIKUM_DATA = [
     title: "Interactive Transformation & Coordinate System dengan WebGL",
     category: "Transformasi & Sistem Koordinat",
     hasPraktikum: true,
-    status: "progress",
-    statusLabel: "On Progress",
+    status: "finished",
+    statusLabel: "Finished",
     desc: "Penerapan sistem koordinat lokal vs world dan transformasi geometri (translasi, rotasi, skala) menggunakan matriks transformasi 3×3 yang dikirimkan ke GPU sebagai uniform pada WebGL.",
     details: [
       "Memahami local coordinate, world coordinate, clip, NDC, dan screen space.",
@@ -441,6 +441,9 @@ function generateIndexHtml() {
 // 2. Generate praktikum-1/index.html to praktikum-16/index.html
 function generatePraktikumPages() {
   PRAKTIKUM_DATA.forEach((p, idx) => {
+    // Preserve custom implemented workbench modules
+    if (p.id === 2 || p.id === 3) return;
+
     const dir = join(ROOT_DIR, p.slug);
     mkdirSync(dir, { recursive: true });
 

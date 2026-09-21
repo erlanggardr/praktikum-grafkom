@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL - Kelompok YOLO</title>
-  <meta name="description" content="Modul Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL Grafika Komputer oleh Kelompok YOLO.">
+  <title>Praktikum 3: Interactive Transformation & Coordinate System — Kelompok YOLO</title>
+  <meta name="description" content="Modul Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL oleh Kelompok YOLO.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
   <!-- Global Navigation Header -->
@@ -21,22 +22,22 @@
       <nav class="header-nav" aria-label="Navigasi Praktikum">
         <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
           <option value="../">-- Pilih Praktikum --</option>
-                <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
-                <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
-                <option value="../praktikum-3/" selected>Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
-                <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
-                <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
-                <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
-                <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
-                <option value="../praktikum-8/">Praktikum 8: -</option>
-                <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
-                <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
-                <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
-                <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
-                <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
-                <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
-                <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
-                <option value="../praktikum-16/">Praktikum 16: -</option>
+          <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+          <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+          <option value="../praktikum-3/" selected>Praktikum 3: Interactive Transformation & Coordinate System</option>
+          <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
+          <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
+          <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+          <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application</option>
+          <option value="../praktikum-8/">Praktikum 8: -</option>
+          <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling</option>
+          <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
+          <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
+          <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline</option>
+          <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing</option>
+          <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph</option>
+          <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization</option>
+          <option value="../praktikum-16/">Praktikum 16: -</option>
         </select>
         <button id="theme-toggle" class="btn-icon" title="Toggle Tema" aria-label="Toggle Tema">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,27 +57,26 @@
   </header>
 
   <main class="container">
-    
-      <!-- Team Metadata Banner -->
-      <section class="team-banner" aria-label="Informasi Kelompok">
-        <div class="team-banner-header">
-          <span class="team-tag">Kelompok YOLO</span>
-        </div>
-        <div class="team-members-grid">
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
-              <span class="member-nrp">NRP 5025241155</span>
-            </div>
-          </div>
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
-              <span class="member-nrp">NRP 5025241179</span>
-            </div>
+    <!-- Team Metadata Banner -->
+    <section class="team-banner" aria-label="Informasi Kelompok">
+      <div class="team-banner-header">
+        <span class="team-tag">Kelompok YOLO</span>
+      </div>
+      <div class="team-members-grid">
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+            <span class="member-nrp">NRP 5025241155</span>
           </div>
         </div>
-      </section>
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+            <span class="member-nrp">NRP 5025241179</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Workbench Header -->
     <section class="workbench-header">
@@ -86,10 +86,10 @@
           <span>&rsaquo;</span>
           <span>Transformasi & Sistem Koordinat</span>
           <span>&rsaquo;</span>
-          <span class="status-badge progress">On Progress</span>
+          <span class="status-badge finished">Finished</span>
         </div>
         <div class="workbench-title-row">
-          <h1 class="workbench-title">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</h1>
+          <h1 class="workbench-title">Praktikum 3: Interactive Transformation & Coordinate System</h1>
         </div>
       </div>
       <div class="workbench-pagination" aria-label="Navigasi Halaman Praktikum">
@@ -99,62 +99,250 @@
       </div>
     </section>
 
-    
     <!-- Interactive Canvas Viewport Workbench -->
-    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika Praktikum 3">
+      <!-- Top Viewport Toolbar -->
       <div class="viewport-toolbar">
         <div class="toolbar-info">
           <div class="toolbar-stat">
             <span>Viewport:</span>
-            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
+            <span id="res-stat" class="toolbar-stat-val">960 × 600 px</span>
           </div>
           <div class="toolbar-stat">
             <span>FPS:</span>
             <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
           </div>
           <div class="toolbar-stat">
-            <span>Mode:</span>
-            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+            <span>Delta Time:</span>
+            <span id="dt-stat" class="toolbar-stat-val">16.6 ms</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Pipeline:</span>
+            <span class="toolbar-stat-val" id="order-mode-badge">Order: T × R × S</span>
           </div>
         </div>
         <div class="toolbar-actions">
-          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <span id="live-pill" class="live-pill"><i></i> LIVE</span>
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Transform Object A (R)">Reset View</button>
           <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
         </div>
       </div>
 
+      <!-- Canvas Wrapper with Glassmorphic HUD -->
       <div class="canvas-wrapper">
-        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum 3"></canvas>
-        <div class="canvas-placeholder-hud">
-          <span class="placeholder-badge">Praktikum 3</span>
-          <h2 class="placeholder-title">Interactive Transformation & Coordinate System dengan WebGL</h2>
-          <p class="placeholder-subtext">Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.</p>
+        <canvas id="glCanvas" class="canvas-target" width="960" height="600" aria-label="Kanvas Render WebGL2 Transformasi 2D"></canvas>
+        
+        <!-- Telemetry HUD Overlay -->
+        <div class="hud-telemetry-panel" aria-label="HUD Informasi Transformasi Object A">
+          <div class="hud-item">
+            <span class="hud-item-label">Position (X, Y):</span>
+            <span id="positionInfo" class="hud-item-val">(-0.38, 0.00)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Rotation:</span>
+            <span id="rotationInfo" class="hud-item-val highlight">0.0°</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Scale (Sx, Sy):</span>
+            <span id="scaleInfo" class="hud-item-val">(1.00, 1.00)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Order:</span>
+            <span id="orderInfo" class="hud-item-val">T × R × S (In-Place)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Status Animasi:</span>
+            <span id="statusInfo" class="hud-item-val">RUNNING</span>
+          </div>
         </div>
-        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+
+        <div id="coords-display" class="canvas-coords-indicator">Pixel: 0px, 0px | NDC: <span>(0.00, 0.00)</span></div>
+      </div>
+
+      <!-- Playground Control Bar -->
+      <div class="playground-control-bar">
+        <div class="control-group-row">
+          <span class="control-label">Preset:</span>
+          <div class="segmented" role="group" aria-label="Transform Presets (1, 2, 3)">
+            <button class="choice" id="preset-1" title="Preset 1 (Key: 1)">Preset 1</button>
+            <button class="choice" id="preset-2" title="Preset 2 (Key: 2)">Preset 2</button>
+            <button class="choice" id="preset-3" title="Preset 3 (Key: 3)">Preset 3</button>
+          </div>
+          <button class="control-btn" id="btn-toggle-order" title="Ganti Urutan Matriks: TRS vs RT (Key: T)">
+            <span class="btn-label">Mode: TRS</span> <span class="btn-toggle-badge">T</span>
+          </button>
+        </div>
+
+        <div class="control-group-row">
+          <button class="control-btn active" id="btn-toggle-axes" title="Toggle Sumbu Koordinat Dunia">
+            Axes
+          </button>
+          <button class="control-btn active" id="btn-toggle-pivot" title="Toggle Titik Pivot Lokal (gl.POINTS)">
+            Pivot
+          </button>
+          <button class="control-btn active" id="btn-toggle-autob" title="Toggle Animasi Object B Otomatis">
+            Object B
+          </button>
+          <button class="control-btn active" id="btn-toggle-child" title="Toggle Hirarki Parent & Child (Key: J)">
+            Child <span class="btn-toggle-badge">J</span>
+          </button>
+          <button class="control-btn" id="btn-toggle-orbit" title="Toggle Satelit Orbit (Key: O)">
+            Orbit <span class="btn-toggle-badge">O</span>
+          </button>
+          <button class="control-btn" id="btn-pause" title="Pause / Resume Animasi (Key: P)">
+            <span class="btn-label">Pause</span> <span class="btn-toggle-badge">P</span>
+          </button>
+          <button class="control-btn btn-danger-subtle" id="btn-reset" title="Reset Transform Object A (Key: R)">
+            Reset <span class="btn-toggle-badge">R</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    
+    <!-- Interactive Dashboard Deck: Speed Controls & Live Matrix Readout -->
+    <div class="dashboard-deck">
+      <!-- Card 1: Speed & Dynamics Tuning -->
+      <section class="deck-card" aria-label="Pengaturan Kecepatan Transformasi">
+        <h2 class="deck-card-title">
+          <span>Speed &amp; Dynamics Tuning</span>
+          <span class="deck-card-tag">Interactive Tuning</span>
+        </h2>
+        
+        <div class="slider-group">
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Translation Speed (Unit/s)</span>
+              <span id="moveSpeedVal" class="slider-val-pill">0.65</span>
+            </div>
+            <input id="moveSpeed" class="apple-slider" type="range" min="0.10" max="2.00" step="0.05" value="0.65" aria-label="Kecepatan Translasi">
+          </div>
 
-    <!-- Metadata & Implementation Specs -->
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Rotation Speed (Deg/s)</span>
+              <span id="rotationSpeedVal" class="slider-val-pill">100°/s</span>
+            </div>
+            <input id="rotationSpeed" class="apple-slider" type="range" min="10" max="240" step="1" value="100" aria-label="Kecepatan Rotasi">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Scaling Speed (Scale/s)</span>
+              <span id="scaleSpeedVal" class="slider-val-pill">0.80</span>
+            </div>
+            <input id="scaleSpeed" class="apple-slider" type="range" min="0.10" max="2.00" step="0.05" value="0.80" aria-label="Kecepatan Skala">
+          </div>
+        </div>
+
+        <div class="scene-legend-bar" aria-label="Legenda Warna Objek Visual">
+          <span class="legend-item" style="--c: #33d9ff">Object A (Player)</span>
+          <span class="legend-item" style="--c: #ff6652">Object B (Auto)</span>
+          <span class="legend-item" style="--c: #ffd147">Child (Hierarkis)</span>
+          <span class="legend-item" style="--c: #66f299">Orbit Satellite</span>
+          <span class="legend-item" style="--c: #7399bf">World Axes</span>
+          <span class="legend-item" style="--c: #ffffff">Pivot Marker</span>
+        </div>
+      </section>
+
+      <!-- Card 2: Live 3×3 Model Matrix Visualizer -->
+      <section class="deck-card" aria-label="Visualisasi Matriks Model 3x3 Real-time">
+        <h2 class="deck-card-title">
+          <span>Live 3×3 Model Matrix (Object A)</span>
+          <span class="deck-card-tag">Column-Major</span>
+        </h2>
+
+        <div class="matrix-visualizer-box" id="matrixText" aria-live="polite">
+┌ 1.00  0.00  -0.38 ┐
+│ 0.00  1.00   0.00 │
+└ 0.00  0.00   1.00 ┘
+        </div>
+
+        <div class="matrix-legend">
+          Format: <code>Float32Array[9]</code> dikirim via <code>gl.uniformMatrix3fv(u_matrix, false, ...)</code>.<br>
+          Kolom 1 &amp; 2 merepresentasikan rotasi &amp; scaling. Kolom 3 (<span style="color: #38bdf8; font-weight: 600;">biru terang</span>) merepresentasikan translasi homogen $(T_x, T_y, 1.0)$.
+        </div>
+      </section>
+    </div>
+
+    <!-- Petunjuk Interaksi & Shortcut Keyboard -->
+    <section class="playground-shortcuts" aria-label="Daftar Shortcut dan Petunjuk Pengguna">
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">W</span><span class="key-cap">A</span><span class="key-cap">S</span><span class="key-cap">D</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">&uarr;</span><span class="key-cap">&larr;</span><span class="key-cap">&darr;</span><span class="key-cap">&rarr;</span>
+        </div>
+        <span class="shortcut-desc">Translasi 2D Object A (Kontinu)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Q</span><span class="key-cap">E</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">+</span><span class="key-cap">-</span>
+        </div>
+        <span class="shortcut-desc">Rotasi (Q/E) &amp; Uniform Scale (+/-)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Z</span><span class="key-cap">X</span>
+          <span class="key-separator">|</span>
+          <span class="key-cap">C</span><span class="key-cap">V</span>
+        </div>
+        <span class="shortcut-desc">Non-Uniform Scale X (Z/X) &amp; Y (C/V)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">1</span><span class="key-cap">2</span><span class="key-cap">3</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">T</span>
+        </div>
+        <span class="shortcut-desc">Presets (1-3) &amp; Toggle Order TRS/RT (T)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Klik Kanvas</span>
+        </div>
+        <span class="shortcut-desc">Pindahkan Object A ke Posisi NDC Mouse</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">J</span><span class="key-cap">O</span>
+        </div>
+        <span class="shortcut-desc">Toggle Child (J) &amp; Satellite Orbit (O)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">P</span><span class="key-cap">R</span>
+        </div>
+        <span class="shortcut-desc">Pause / Freeze (P) &amp; Reset Transform (R)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">[</span><span class="key-cap">]</span><span class="key-cap">H</span>
+        </div>
+        <span class="shortcut-desc">Navigasi Modul (Prev [ / Next ] / Home H)</span>
+      </div>
+    </section>
+
+    <!-- Deskripsi & Analisis Pembelajaran -->
     <section class="workbench-meta-panel">
       <div class="meta-box">
         <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
         <div class="meta-box-content">
-          <p>Penerapan sistem koordinat lokal vs world dan transformasi geometri (translasi, rotasi, skala) menggunakan matriks transformasi 3×3 yang dikirimkan ke GPU sebagai uniform pada WebGL.</p>
+          <p>
+            Praktikum 3 berfokus pada pemahaman bahwa vertex geometry harus tetap berada pada <strong>local coordinate space</strong> (origin di $(0,0)$) dalam satu GPU buffer bersama. Seluruh perubahan posisi, orientasi, dan ukuran dikalkulasi menggunakan <strong>Model Matrix 3&times;3</strong> yang dikirimkan ke vertex shader melalui uniform.
+          </p>
           <ul>
-            <li>Memahami local coordinate, world coordinate, clip, NDC, dan screen space.</li>
-              <li>Membuat translation matrix, rotation matrix, dan scaling matrix 3×3.</li>
-              <li>Komposisi perkalian matriks transformasi affine.</li>
-              <li>Mengirimkan data matriks ke vertex shader melalui uniform.</li>
-              <li>Membangun Interactive Transformation Playground dengan kontrol interaktif.</li>
+            <li><strong>Local Coordinate &amp; Shared GPU Buffer</strong>: Segitiga didefinisikan sekali di local space dan digunakan bersama oleh Object A, Object B, Child, dan Orbit Satellite tanpa memodifikasi vertex buffer setiap frame.</li>
+            <li><strong>Affine Matrix Composition</strong>: Komposisi translasi, rotasi, dan penskalaan column-major $3\times3$ dengan koordinat homogen $(x, y, 1.0)$.</li>
+            <li><strong>Transform Order Comparison</strong>: Membuktikan secara interaktif bahwa $T \times R \times S$ (rotasi in-place) menghasilkan posisi berbeda dibanding $R \times T \times S$ (rotasi mengorbit world origin).</li>
+            <li><strong>Hierarki Parent-Child</strong>: Objek anak ditransformasikan menggunakan perkalian matriks $\mathbf{M}_{\text{child\_world}} = \mathbf{M}_{\text{parent\_world}} \times \mathbf{M}_{\text{child\_local}}$.</li>
+            <li><strong>Pause &amp; Delta Time</strong>: Gerakan halus independen frame rate dengan kemampuan freeze seketika (tombol <code>P</code>).</li>
           </ul>
-          
         </div>
       </div>
-
       <div class="meta-box">
-        <h2 class="meta-box-title">Spesifikasi Praktikum</h2>
+        <h2 class="meta-box-title">Spesifikasi Modul</h2>
         <table class="tech-specs-table">
           <tbody>
             <tr>
@@ -163,15 +351,31 @@
             </tr>
             <tr>
               <th>Topik / Kategori</th>
-              <td>Transformasi & Sistem Koordinat</td>
+              <td>Transformasi Geometri &amp; Sistem Koordinat 2D</td>
             </tr>
             <tr>
-              <th>Status Praktikum</th>
-              <td>On Progress</td>
+              <th>Renderer Pipeline</th>
+              <td>WebGL2 (GLSL ES 3.00)</td>
             </tr>
             <tr>
-              <th>Renderer</th>
-              <td>Canvas 2D / WebGL</td>
+              <th>Struktur Matriks</th>
+              <td>3×3 Column-Major (Float32Array)</td>
+            </tr>
+            <tr>
+              <th>Komposisi Order</th>
+              <td>TRS (In-Place) &amp; RT (Orbit Origin)</td>
+            </tr>
+            <tr>
+              <th>Objek Terender</th>
+              <td>Object A + Object B (Auto) + Child + Orbit Satellite</td>
+            </tr>
+            <tr>
+              <th>Challenge Lengkap</th>
+              <td>Challenge A, B, C, D, E, F (Semua Selesai)</td>
+            </tr>
+            <tr>
+              <th>Status Verifikasi</th>
+              <td>Finished (Tested Local &amp; Server)</td>
             </tr>
           </tbody>
         </table>
@@ -179,7 +383,7 @@
     </section>
   </main>
 
-  
+  <!-- Global Site Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-info">
@@ -193,7 +397,8 @@
     </div>
   </footer>
 
+  <!-- Universal Script Loading: Compatible with both file:/// and http:// -->
   <script src="../assets/js/main.js"></script>
-  
+  <script src="./app.js"></script>
 </body>
 </html>
