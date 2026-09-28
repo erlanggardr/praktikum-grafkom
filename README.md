@@ -22,9 +22,9 @@ Daftar modul praktikum disinkronisasi langsung dari [Learning Hub Grafika Komput
 | **P01** | Graphics Playground dengan HTML Canvas 2D | HTML Canvas 2D | `/praktikum-1/` | Finished |
 | **P02** | WebGL Fundamental Playground | WebGL Fundamental | `/praktikum-2/` | Finished |
 | **P03** | Interactive Transformation & Coordinate System | Transformasi & Sistem Koordinat | `/praktikum-3/` | Finished |
-| **P04** | Camera, Projection & 3D dengan WebGL | Kamera & Proyeksi 3D | `/praktikum-4/` | On Progress |
-| **P05** | Lighting, Shading & Texture pada WebGL | Lighting, Shading & Texture | `/praktikum-5/` | On Progress |
-| **P06** | Introduction to Three.js — Mini 3D Scene | Three.js Fundamental | `/praktikum-6/` | On Progress |
+| **P04** | Camera, Projection & 3D dengan WebGL | Kamera & Proyeksi 3D | `/praktikum-4/` | Finished |
+| **P05** | Lighting, Shading & Texture pada WebGL | Lighting, Shading & Texture | `/praktikum-5/` | Finished |
+| **P06** | Introduction to Three.js — Mini 3D Scene | Three.js Fundamental | `/praktikum-6/` | Finished |
 | **P07** | Three.js Interactive 3D Application | Three.js Interactive 3D | `/praktikum-7/` | On Progress |
 | **P08** | - | - | `/praktikum-8/` | On Progress |
 | **P09** | Blender Fundamental & 3D Modeling — Hard-Surface Asset | Blender 3D Modeling | `/praktikum-9/` | On Progress |

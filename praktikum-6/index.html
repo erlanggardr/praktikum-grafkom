@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praktikum 6: Introduction to Three.js — Mini 3D Scene - Kelompok YOLO</title>
+  <title>Praktikum 6: Introduction to Three.js — Mini 3D Scene — Kelompok YOLO</title>
   <meta name="description" content="Modul Praktikum 6: Introduction to Three.js — Mini 3D Scene Grafika Komputer oleh Kelompok YOLO.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
   <!-- Global Navigation Header -->
@@ -21,22 +22,22 @@
       <nav class="header-nav" aria-label="Navigasi Praktikum">
         <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
           <option value="../">-- Pilih Praktikum --</option>
-                <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
-                <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
-                <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
-                <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
-                <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
-                <option value="../praktikum-6/" selected>Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
-                <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
-                <option value="../praktikum-8/">Praktikum 8: -</option>
-                <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
-                <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
-                <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
-                <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
-                <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
-                <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
-                <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
-                <option value="../praktikum-16/">Praktikum 16: -</option>
+          <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+          <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+          <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
+          <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
+          <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
+          <option value="../praktikum-6/" selected>Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+          <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
+          <option value="../praktikum-8/">Praktikum 8: -</option>
+          <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
+          <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
+          <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
+          <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
+          <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
+          <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
+          <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
+          <option value="../praktikum-16/">Praktikum 16: -</option>
         </select>
         <button id="theme-toggle" class="btn-icon" title="Toggle Tema" aria-label="Toggle Tema">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,27 +57,26 @@
   </header>
 
   <main class="container">
-    
-      <!-- Team Metadata Banner -->
-      <section class="team-banner" aria-label="Informasi Kelompok">
-        <div class="team-banner-header">
-          <span class="team-tag">Kelompok YOLO</span>
-        </div>
-        <div class="team-members-grid">
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
-              <span class="member-nrp">NRP 5025241155</span>
-            </div>
-          </div>
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
-              <span class="member-nrp">NRP 5025241179</span>
-            </div>
+    <!-- Team Metadata Banner -->
+    <section class="team-banner" aria-label="Informasi Kelompok">
+      <div class="team-banner-header">
+        <span class="team-tag">Kelompok YOLO</span>
+      </div>
+      <div class="team-members-grid">
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+            <span class="member-nrp">NRP 5025241155</span>
           </div>
         </div>
-      </section>
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+            <span class="member-nrp">NRP 5025241179</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Workbench Header -->
     <section class="workbench-header">
@@ -86,7 +86,7 @@
           <span>&rsaquo;</span>
           <span>Three.js Fundamental</span>
           <span>&rsaquo;</span>
-          <span class="status-badge progress">On Progress</span>
+          <span class="status-badge finished">Finished</span>
         </div>
         <div class="workbench-title-row">
           <h1 class="workbench-title">Praktikum 6: Introduction to Three.js — Mini 3D Scene</h1>
@@ -99,79 +99,407 @@
       </div>
     </section>
 
-    
     <!-- Interactive Canvas Viewport Workbench -->
-    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika Praktikum 6">
       <div class="viewport-toolbar">
         <div class="toolbar-info">
           <div class="toolbar-stat">
             <span>Viewport:</span>
-            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
+            <span id="res-stat" class="toolbar-stat-val">960 × 600 px</span>
           </div>
           <div class="toolbar-stat">
             <span>FPS:</span>
             <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
           </div>
           <div class="toolbar-stat">
-            <span>Mode:</span>
-            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+            <span>Delta Time:</span>
+            <span id="dt-stat" class="toolbar-stat-val">16.6 ms</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Engine:</span>
+            <span class="toolbar-stat-val">Three.js r128 (Shadows &amp; PBR)</span>
           </div>
         </div>
         <div class="toolbar-actions">
-          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <span id="live-pill" class="live-pill"><i></i> LIVE</span>
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Scene & Kamera (Key: R)">Reset View</button>
           <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
         </div>
       </div>
 
+      <!-- Canvas Wrapper with Glassmorphic HUD -->
       <div class="canvas-wrapper">
-        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum 6"></canvas>
-        <div class="canvas-placeholder-hud">
-          <span class="placeholder-badge">Praktikum 6</span>
-          <h2 class="placeholder-title">Introduction to Three.js — Mini 3D Scene</h2>
-          <p class="placeholder-subtext">Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.</p>
+        <canvas id="grafkom-canvas" class="canvas-target" width="960" height="600" aria-label="Kanvas Render Three.js Modular 3D Scene Explorer"></canvas>
+
+        <!-- Telemetry HUD Overlay -->
+        <div class="hud-telemetry-panel" aria-label="HUD Informasi Scene Three.js">
+          <div class="hud-item">
+            <span class="hud-item-label">Active Camera:</span>
+            <span id="activeCameraType" class="hud-item-val active-mode">PERSPECTIVE (55°)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Material Shader:</span>
+            <span id="activeMaterialName" class="hud-item-val highlight">STANDARD (PBR)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Shadow Quality:</span>
+            <span id="shadowQualityInfo" class="hud-item-val">1024 × 1024 (PCFSoft)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Selected Object:</span>
+            <span id="activeObjName" class="hud-item-val highlight">Torus</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Object Position:</span>
+            <span id="activeObjPos" class="hud-item-val">(0.00, 1.25, 0.00)</span>
+          </div>
         </div>
-        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+
+        <div id="coords-display" class="canvas-coords-indicator">Pixel: 0px, 0px | UV: (0.00, 0.00)</div>
+      </div>
+
+      <!-- Playground Control Bar -->
+      <div class="playground-control-bar">
+        <div class="control-group-row">
+          <span class="control-label">Kamera (C):</span>
+          <div class="segmented" role="group" aria-label="Pilihan Kamera">
+            <button class="choice active" id="btn-cam-persp" title="Kamera Perspektif (Key: C)">Perspective</button>
+            <button class="choice" id="btn-cam-ortho" title="Kamera Orthographic (Key: C)">Orthographic</button>
+          </div>
+
+          <span class="control-label" style="margin-left: 8px;">Material (Challenge B):</span>
+          <div class="segmented" role="group" aria-label="Galeri Material">
+            <button class="choice active" id="mat-standard" title="MeshStandardMaterial PBR">Standard</button>
+            <button class="choice" id="mat-physical" title="MeshPhysicalMaterial Clearcoat">Physical</button>
+            <button class="choice" id="mat-phong" title="MeshPhongMaterial Specular">Phong</button>
+            <button class="choice" id="mat-lambert" title="MeshLambertMaterial Diffuse">Lambert</button>
+            <button class="choice" id="mat-basic" title="MeshBasicMaterial Unlit">Basic</button>
+          </div>
+
+          <span class="control-label" style="margin-left: 8px;">Pilih Objek (1-5):</span>
+          <div class="segmented" role="group" aria-label="Seleksi Objek Geometri">
+            <button class="choice" id="sel-box" title="Pilih Box (Key: 1)">Box</button>
+            <button class="choice" id="sel-sphere" title="Pilih Sphere (Key: 2)">Sphere</button>
+            <button class="choice active" id="sel-torus" title="Pilih Torus (Key: 3)">Torus</button>
+            <button class="choice" id="sel-cylinder" title="Pilih Cylinder (Key: 4)">Cylinder</button>
+            <button class="choice" id="sel-cone" title="Pilih Cone (Key: 5)">Cone</button>
+          </div>
+        </div>
+
+        <div class="control-group-row">
+          <button class="control-btn active" id="btn-toggle-light-orbit" title="Toggle Animasi Orbit Cahaya & Marker Orb (Key: L)">
+            Orbit Light <span class="btn-toggle-badge">L</span>
+          </button>
+          <button class="control-btn" id="btn-pause" title="Pause / Resume Render Loop & Animasi (Key: P)">
+            <span class="btn-label">Pause</span> <span class="btn-toggle-badge">P</span>
+          </button>
+          <button class="control-btn btn-danger-subtle" id="btn-reset" title="Reset Posisi Objek & Kamera (Key: R)">
+            Reset <span class="btn-toggle-badge">R</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    
+    <!-- Interactive Dashboard Deck: Material Tuner & Live Scene Inspector -->
+    <div class="dashboard-deck">
+      <!-- Card 1: PBR Material & Light Dynamics Tuning -->
+      <section class="deck-card" aria-label="Pengaturan Parameter Material & Cahaya">
+        <h2 class="deck-card-title">
+          <span>Material &amp; Light Dynamics</span>
+          <span class="deck-card-tag">Interactive Tuning</span>
+        </h2>
+
+        <div class="slider-group">
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Surface Roughness (Kekasaran PBR)</span>
+              <span id="roughnessVal" class="slider-val-pill">0.35</span>
+            </div>
+            <input id="roughnessSlider" class="apple-slider" type="range" min="0.00" max="1.00" step="0.05" value="0.35" aria-label="Roughness">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Metalness (Tingkat Metalik PBR)</span>
+              <span id="metalnessVal" class="slider-val-pill">0.15</span>
+            </div>
+            <input id="metalnessSlider" class="apple-slider" type="range" min="0.00" max="1.00" step="0.05" value="0.15" aria-label="Metalness">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Directional Light Intensity</span>
+              <span id="lightIntensityVal" class="slider-val-pill">1.2</span>
+            </div>
+            <input id="lightIntensitySlider" class="apple-slider" type="range" min="0.0" max="3.0" step="0.1" value="1.2" aria-label="Intensitas Cahaya">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Light Orbit Speed (rad/s)</span>
+              <span id="lightSpeedVal" class="slider-val-pill">0.75 rad/s</span>
+            </div>
+            <input id="lightSpeedSlider" class="apple-slider" type="range" min="0.0" max="2.5" step="0.05" value="0.75" aria-label="Kecepatan Orbit">
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 2: Live Scene Inspector HUD (Challenge F) & Shadow Tuning (Challenge E) -->
+      <section class="deck-card" aria-label="Live Scene Inspector & Kualitas Shadow">
+        <h2 class="deck-card-title">
+          <span>Live Scene Inspector (Challenge F)</span>
+          <span class="deck-card-tag">Telemetry Readout</span>
+        </h2>
+
+        <div class="inspector-stat-grid">
+          <div class="inspector-card">
+            <span class="inspector-card-label">Scene Triangles (Polygons)</span>
+            <span id="polyStat" class="inspector-card-val">5,324</span>
+          </div>
+          <div class="inspector-card">
+            <span class="inspector-card-label">Geometry Vertices</span>
+            <span id="vertStat" class="inspector-card-val">15,972</span>
+          </div>
+          <div class="inspector-card">
+            <span class="inspector-card-label">GPU Draw Calls</span>
+            <span id="callsStat" class="inspector-card-val">8</span>
+          </div>
+          <div class="inspector-card">
+            <span class="inspector-card-label">Shadow Filter</span>
+            <span class="inspector-card-val" style="color: #30d158; font-size: 13px;">PCFSoftShadow</span>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 12px;">
+          <span class="control-label" style="display: block; margin-bottom: 8px;">Shadow Map Resolution (Challenge E):</span>
+          <div class="segmented" role="group" aria-label="Shadow Resolution Selector" style="width: 100%; display: flex;">
+            <button class="choice" id="shadow-512" style="flex: 1;" title="512×512 Rendah">512 px (Low)</button>
+            <button class="choice active" id="shadow-1024" style="flex: 1;" title="1024×1024 Sedang">1024 px (Med)</button>
+            <button class="choice" id="shadow-2048" style="flex: 1;" title="2048×2048 Tinggi">2048 px (Ultra)</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Petunjuk Interaksi & Shortcut Keyboard -->
+    <section class="playground-shortcuts" aria-label="Daftar Shortcut dan Petunjuk Pengguna">
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">W</span><span class="key-cap">A</span><span class="key-cap">S</span><span class="key-cap">D</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">&uarr;</span><span class="key-cap">&larr;</span><span class="key-cap">&darr;</span><span class="key-cap">&rarr;</span>
+        </div>
+        <span class="shortcut-desc">Gerakkan Objek Terpilih pada Sumbu X / Z (Challenge H)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Q</span><span class="key-cap">E</span>
+        </div>
+        <span class="shortcut-desc">Rotasi Objek Terpilih Mengitari Sumbu Y</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">1</span><span class="key-cap">2</span><span class="key-cap">3</span><span class="key-cap">4</span><span class="key-cap">5</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">Klik Objek</span>
+        </div>
+        <span class="shortcut-desc">Seleksi Objek Geometri via Raycaster atau Tombol 1-5</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">C</span>
+          <span class="key-separator">|</span>
+          <span class="key-cap">L</span>
+        </div>
+        <span class="shortcut-desc">Toggle Kamera Perspektif/Ortho (C) &amp; Orbit Cahaya (L)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Drag Mouse</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">Scroll</span>
+        </div>
+        <span class="shortcut-desc">Interaksi Orbit Kamera 3D Mengitari Scene &amp; Zoom</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">P</span>
+          <span class="key-separator">|</span>
+          <span class="key-cap">R</span>
+        </div>
+        <span class="shortcut-desc">Pause Render Loop (P) &amp; Reset Posisi Semula (R)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">[</span><span class="key-cap">]</span><span class="key-cap">H</span>
+        </div>
+        <span class="shortcut-desc">Navigasi Modul (Prev [ / Next ] / Home H)</span>
+      </div>
+    </section>
 
     <!-- Metadata & Implementation Specs -->
     <section class="workbench-meta-panel">
+      <!-- 1. Deskripsi & Sasaran Pembelajaran -->
       <div class="meta-box">
         <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
         <div class="meta-box-content">
-          <p>Pembangunan scene grafika 3D terstruktur menggunakan Three.js sebagai abstraction layer di atas WebGL: inisialisasi Scene, PerspectiveCamera, WebGLRenderer, Mesh (Box, Sphere, Plane), Material, Lighting, Shadow, dan Animation Loop responsif.</p>
+          <p>
+            Modul Praktikum 6 mengeksplorasi abstraksi grafika 3D modern menggunakan pustaka Three.js sebagai engine grafis tingkat tinggi di atas WebGL, mencakup konstruksi Scene Graph, geometri primitif multi-bentuk, galeri material (Basic s/d Physical PBR), bayangan dinamis (Shadow Maps), serta inspeksi telemetri runtime.
+          </p>
           <ul>
-            <li>Inisialisasi Three.js Scene, PerspectiveCamera, dan WebGLRenderer.</li>
-              <li>Membuat geometri BoxGeometry, SphereGeometry, dan PlaneGeometry.</li>
-              <li>Menerapkan Material, Transformasi (position, rotation, scale), dan Mesh.</li>
-              <li>Konfigurasi AmbientLight, DirectionalLight, dan kalkulasi bayangan (shadows).</li>
-              <li>Mengatur requestAnimationFrame loop dengan kalkulasi delta time.</li>
+            <li>Menginisialisasi arsitektur Three.js standar: <code>THREE.Scene</code>, <code>THREE.PerspectiveCamera</code>, <code>THREE.OrthographicCamera</code>, dan <code>THREE.WebGLRenderer</code> dengan antialiasing dan penanganan pixel ratio retina display.</li>
+            <li>Membuat dan menyusun beragam bentuk geometri primitif (<code>BoxGeometry</code>, <code>SphereGeometry</code>, <code>PlaneGeometry</code>, <code>CylinderGeometry</code>, <code>TorusGeometry</code>, <code>ConeGeometry</code>).</li>
+            <li>Membandingkan karakteristik visual dan komputasi berbagai jenis material: <code>MeshBasicMaterial</code> (unlit), <code>MeshLambertMaterial</code> (diffuse), <code>MeshPhongMaterial</code> (specular shine), <code>MeshStandardMaterial</code> (PBR metalness/roughness), dan <code>MeshPhysicalMaterial</code> (clearcoat).</li>
+            <li>Mengonfigurasi hierarki pencahayaan terpadu: <code>DirectionalLight</code> dengan bayangan beresolusi tinggi, <code>AmbientLight</code> untuk iluminasi lingkungan, dan <code>PointLight</code> untuk efek aksen rim light.</li>
+            <li>Mengaktifkan dan mengoptimasi pipeline bayangan dinamis (<code>castShadow = true</code>, <code>receiveShadow = true</code>, <code>shadowMap.type = THREE.PCFSoftShadowMap</code>) serta resolusi shadow map (512, 1024, 2048).</li>
+            <li>Menghubungkan interaktivitas pengguna berbasis Raycaster mouse click selection dan keyboard object controller.</li>
           </ul>
-          
+
+          <!-- 2. Fitur & Tantangan yang Diimplementasikan -->
+          <h3 class="meta-box-title" style="margin-top: 24px;">Fitur &amp; Tantangan yang Diimplementasikan</h3>
+          <div class="challenges-grid">
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 1: Arsitektur Three.js Standalone</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Inisialisasi Scene, Dual Camera (Perspective &amp; Orthographic), FogExp2, dan WebGLRenderer antialiased yang dibundel secara lokal di assets/js/vendor/three.min.js untuk keamanan protokol file:///.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 2: Koleksi Geometri Primitif Lengkap</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Menampilkan kombinasi Box, Sphere, Torus, Cylinder, Cone, dan Ground Plane dengan pembagian koordinat teratur di atas sumbu koordinat dan grid lantai.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 3: Pencahayaan &amp; Shadow Maps</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Konfigurasi DirectionalLight dengan shadow casting, AmbientLight, PointLight, serta ground plane penangkap bayangan dengan filter PCFSoftShadowMap.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 4: Render Loop Responsif &amp; Delta Time</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Siklus frame animasi berbasis <code>THREE.Clock</code> yang mengompensasi variasi framerate dan resize observer otomatis untuk mencegah distorsi aspect ratio.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge A: Variasi Geometri 3D Multi-Objek</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Pameran multi-geometri solid yang tertata elegan dengan palet warna Apple HIG distintif (Blue, Green, Orange, Purple, Pink) di atas landasan reflektif gelap.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge B: Material Gallery Komparatif</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Penggantian seketika kelima tipe material (Basic, Lambert, Phong, Standard, Physical) pada seluruh objek scene dilengkapi slider tuning Roughness dan Metalness secara real-time.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge C: Dynamic Toggle Orthographic vs Perspective</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Peralihan dinamis antara PerspectiveCamera (lensa normal dengan efek kedalaman) dan OrthographicCamera (proyeksi paralel isometrik tanpa penyusutan perspektif) via hotkey 'C'.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge D: Light Orbit Animation &amp; Marker Orb</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Sumber cahaya matahari DirectionalLight mengitari scene secara sirkular disertai bola penanda visual kuning bercahaya untuk mengamati dinamika bayangan yang bergerak dinamis.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge E: Shadow Map Resolution &amp; Quality Tuning</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Tuning resolusi peta bayangan (512×512, 1024×1024, 2048×2048) secara langsung dengan pembuangan buffer lama (dispose) dan alokasi ulang tekstur shadow map.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge F: Live Scene Inspector HUD</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Panel telemetri performa grafis real-time yang membaca langsung dari <code>renderer.info</code>: total poligon (triangles), verteks geometri, draw calls GPU, dan koordinat kamera.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge G: Toggle Play / Pause Animasi</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Fitur jeda seketika untuk membekukan rotasi objek dan orbit pencahayaan via tombol keyboard 'P' atau tombol toolbar, dengan penanda status LIVE / PAUSED.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge H: Interactive Keyboard &amp; Mouse Controller</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Seleksi objek langsung via klik kursor mouse (Raycasting) atau tombol 1-5 dengan visual bounding box, serta kontrol translasi (WASD/Arrow) dan rotasi (Q/E) pada objek yang dipilih.</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- 3. Spesifikasi Praktikum -->
       <div class="meta-box">
         <h2 class="meta-box-title">Spesifikasi Praktikum</h2>
         <table class="tech-specs-table">
+          <thead>
+            <tr><th>Komponen</th><th>Implementasi Teknis</th></tr>
+          </thead>
           <tbody>
             <tr>
-              <th>Nomor Modul</th>
+              <td>Nomor Modul</td>
               <td>Praktikum 6</td>
             </tr>
             <tr>
-              <th>Topik / Kategori</th>
-              <td>Three.js Fundamental</td>
+              <td>Topik / Kategori</td>
+              <td>Three.js Fundamental (Introduction to Three.js — Mini 3D Scene)</td>
             </tr>
             <tr>
-              <th>Status Praktikum</th>
-              <td>On Progress</td>
+              <td>Status Praktikum</td>
+              <td>Finished</td>
             </tr>
             <tr>
-              <th>Renderer</th>
-              <td>Canvas 2D / WebGL</td>
+              <td>Rendering Engine</td>
+              <td>Three.js r128 (WebGLRenderer dengan antialiasing &amp; PCFSoftShadowMap)</td>
+            </tr>
+            <tr>
+              <td>Sistem Kamera</td>
+              <td>Dual Camera: <code>PerspectiveCamera</code> (FOV 55°) &amp; <code>OrthographicCamera</code></td>
+            </tr>
+            <tr>
+              <td>Koleksi Geometri</td>
+              <td>BoxGeometry, SphereGeometry, PlaneGeometry, CylinderGeometry, TorusGeometry, ConeGeometry</td>
+            </tr>
+            <tr>
+              <td>Galeri Material</td>
+              <td>MeshBasicMaterial, MeshLambertMaterial, MeshPhongMaterial, MeshStandardMaterial, MeshPhysicalMaterial</td>
+            </tr>
+            <tr>
+              <td>Pencahayaan &amp; Bayangan</td>
+              <td>DirectionalLight (Orbiting Key Light), AmbientLight, PointLight (Rim Accent)</td>
+            </tr>
+            <tr>
+              <td>Interaksi &amp; Kontrol</td>
+              <td>Raycaster Mouse Selection, WASD / Arrow Key Translation, Q/E Rotation, Camera Orbit Mouse Drag</td>
             </tr>
           </tbody>
         </table>
@@ -179,7 +507,6 @@
     </section>
   </main>
 
-  
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-info">
@@ -193,7 +520,14 @@
     </div>
   </footer>
 
+  <!-- Universal Script Loading: Compatible with both file:/// and http:// -->
+  <script src="../assets/js/vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === "undefined") {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
   <script src="../assets/js/main.js"></script>
-  
+  <script src="./app.js"></script>
 </body>
 </html>

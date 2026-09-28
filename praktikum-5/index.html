@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praktikum 5: Lighting, Shading & Texture pada WebGL - Kelompok YOLO</title>
+  <title>Praktikum 5: Lighting, Shading & Texture pada WebGL — Kelompok YOLO</title>
   <meta name="description" content="Modul Praktikum 5: Lighting, Shading & Texture pada WebGL Grafika Komputer oleh Kelompok YOLO.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
   <!-- Global Navigation Header -->
@@ -21,22 +22,22 @@
       <nav class="header-nav" aria-label="Navigasi Praktikum">
         <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
           <option value="../">-- Pilih Praktikum --</option>
-                <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
-                <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
-                <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
-                <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
-                <option value="../praktikum-5/" selected>Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
-                <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
-                <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
-                <option value="../praktikum-8/">Praktikum 8: -</option>
-                <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
-                <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
-                <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
-                <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
-                <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
-                <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
-                <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
-                <option value="../praktikum-16/">Praktikum 16: -</option>
+          <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+          <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+          <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
+          <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
+          <option value="../praktikum-5/" selected>Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
+          <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+          <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
+          <option value="../praktikum-8/">Praktikum 8: -</option>
+          <option value="../praktikum-9/">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
+          <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
+          <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
+          <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
+          <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
+          <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
+          <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
+          <option value="../praktikum-16/">Praktikum 16: -</option>
         </select>
         <button id="theme-toggle" class="btn-icon" title="Toggle Tema" aria-label="Toggle Tema">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,27 +57,26 @@
   </header>
 
   <main class="container">
-    
-      <!-- Team Metadata Banner -->
-      <section class="team-banner" aria-label="Informasi Kelompok">
-        <div class="team-banner-header">
-          <span class="team-tag">Kelompok YOLO</span>
-        </div>
-        <div class="team-members-grid">
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
-              <span class="member-nrp">NRP 5025241155</span>
-            </div>
-          </div>
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
-              <span class="member-nrp">NRP 5025241179</span>
-            </div>
+    <!-- Team Metadata Banner -->
+    <section class="team-banner" aria-label="Informasi Kelompok">
+      <div class="team-banner-header">
+        <span class="team-tag">Kelompok YOLO</span>
+      </div>
+      <div class="team-members-grid">
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+            <span class="member-nrp">NRP 5025241155</span>
           </div>
         </div>
-      </section>
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+            <span class="member-nrp">NRP 5025241179</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Workbench Header -->
     <section class="workbench-header">
@@ -84,12 +84,12 @@
         <div class="breadcrumb-trail">
           <a href="../">Daftar Modul</a>
           <span>&rsaquo;</span>
-          <span>Lighting, Shading & Texture</span>
+          <span>Lighting, Shading &amp; Texture</span>
           <span>&rsaquo;</span>
-          <span class="status-badge progress">On Progress</span>
+          <span class="status-badge finished">Finished</span>
         </div>
         <div class="workbench-title-row">
-          <h1 class="workbench-title">Praktikum 5: Lighting, Shading & Texture pada WebGL</h1>
+          <h1 class="workbench-title">Praktikum 5: Lighting, Shading &amp; Texture pada WebGL</h1>
         </div>
       </div>
       <div class="workbench-pagination" aria-label="Navigasi Halaman Praktikum">
@@ -99,79 +99,409 @@
       </div>
     </section>
 
-    
     <!-- Interactive Canvas Viewport Workbench -->
-    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika Praktikum 5">
       <div class="viewport-toolbar">
         <div class="toolbar-info">
           <div class="toolbar-stat">
             <span>Viewport:</span>
-            <span id="res-stat" class="toolbar-stat-val">Loading...</span>
+            <span id="res-stat" class="toolbar-stat-val">960 × 600 px</span>
           </div>
           <div class="toolbar-stat">
             <span>FPS:</span>
             <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
           </div>
           <div class="toolbar-stat">
-            <span>Mode:</span>
-            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+            <span>Delta Time:</span>
+            <span id="dt-stat" class="toolbar-stat-val">16.6 ms</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Pipeline:</span>
+            <span class="toolbar-stat-val">Blinn-Phong + UV Mipmap</span>
           </div>
         </div>
         <div class="toolbar-actions">
-          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <span id="live-pill" class="live-pill"><i></i> LIVE</span>
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Pencahayaan & Kamera (Key: R)">Reset View</button>
           <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
         </div>
       </div>
 
+      <!-- Canvas Wrapper with Glassmorphic HUD -->
       <div class="canvas-wrapper">
-        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum 5"></canvas>
-        <div class="canvas-placeholder-hud">
-          <span class="placeholder-badge">Praktikum 5</span>
-          <h2 class="placeholder-title">Lighting, Shading & Texture pada WebGL</h2>
-          <p class="placeholder-subtext">Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.</p>
+        <canvas id="grafkom-canvas" class="canvas-target" width="960" height="600" aria-label="Kanvas Render WebGL2 Lighting & Shading Playground"></canvas>
+
+        <!-- Telemetry HUD Overlay -->
+        <div class="hud-telemetry-panel" aria-label="HUD Informasi Pencahayaan & Tekstur">
+          <div class="hud-item">
+            <span class="hud-item-label">Light Position (World):</span>
+            <span id="lightPosInfo" class="hud-item-val highlight">(3.50, 3.50, 3.50)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Camera Eye Position:</span>
+            <span id="camPosInfo" class="hud-item-val">(0.00, 2.50, 7.50)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Shading Model:</span>
+            <span id="shadingModeInfo" class="hud-item-val active-mode">SMOOTH (PHONG)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Normal Matrix (M^-1T):</span>
+            <span id="normalMatrixInfo" class="hud-item-val active-mode">ACTIVE (Inv-Transpose)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Active Texture:</span>
+            <span id="textureInfo" class="hud-item-val">CHECKERBOARD</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Mipmap Filter:</span>
+            <span id="filterInfo" class="hud-item-val">TRILINEAR</span>
+          </div>
         </div>
-        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+
+        <div id="coords-display" class="canvas-coords-indicator">Pixel: 0px, 0px | UV: (0.00, 0.00)</div>
+      </div>
+
+      <!-- Playground Control Bar -->
+      <div class="playground-control-bar">
+        <div class="control-group-row">
+          <span class="control-label">Shading:</span>
+          <div class="segmented" role="group" aria-label="Pilihan Shading">
+            <button class="choice active" id="btn-shading-smooth" title="Smooth Shading Phong Interpolated (Key: F)">Smooth</button>
+            <button class="choice" id="btn-shading-flat" title="Flat Shading via Derivatives (Key: F)">Flat</button>
+          </div>
+
+          <span class="control-label" style="margin-left: 8px;">Tekstur (1-4):</span>
+          <div class="segmented" role="group" aria-label="Pilihan Tekstur">
+            <button class="choice active" id="tex-checkerboard" title="Tekstur Checkerboard (Key: 1)">Checker</button>
+            <button class="choice" id="tex-uvgrid" title="Tekstur UV Grid (Key: 2)">UV Grid</button>
+            <button class="choice" id="tex-circuit" title="Tekstur Cyber Circuit (Key: 3)">Circuit</button>
+            <button class="choice" id="tex-marble" title="Tekstur Sinusoidal Marble (Key: 4)">Marble</button>
+          </div>
+
+          <span class="control-label" style="margin-left: 8px;">Komponen:</span>
+          <button class="toggle-chip active" id="toggle-ambient" title="Toggle Cahaya Lingkungan Ambient"><i></i> Ambient</button>
+          <button class="toggle-chip active" id="toggle-diffuse" title="Toggle Cahaya Difusi Lambertian"><i></i> Diffuse</button>
+          <button class="toggle-chip active" id="toggle-specular" title="Toggle Pantulan Kilap Specular"><i></i> Specular</button>
+        </div>
+
+        <div class="control-group-row">
+          <button class="control-btn active" id="btn-toggle-light-orbit" title="Toggle Animasi Orbit Sumber Cahaya (Key: L)">
+            Orbit Light <span class="btn-toggle-badge">L</span>
+          </button>
+          <button class="control-btn" id="btn-toggle-non-uniform" title="Toggle Skala Non-Uniform (Challenge D)">
+            Non-Uniform Scale
+          </button>
+          <button class="control-btn active" id="btn-toggle-normal-matrix" title="Toggle Uji Normal Matrix M^-1T vs Bypass (Key: N)">
+            Normal Matrix <span class="btn-toggle-badge">N</span>
+          </button>
+          <button class="control-btn" id="btn-pause" title="Pause / Resume Siklus Frame Animasi (Key: P)">
+            <span class="btn-label">Pause</span> <span class="btn-toggle-badge">P</span>
+          </button>
+          <button class="control-btn btn-danger-subtle" id="btn-reset" title="Reset Pencahayaan & Objek (Key: R)">
+            Reset <span class="btn-toggle-badge">R</span>
+          </button>
+        </div>
       </div>
     </section>
 
-    
+    <!-- Interactive Dashboard Deck: Lighting & Normal Matrix Visualizer -->
+    <div class="dashboard-deck">
+      <!-- Card 1: Lighting & Material Dynamics -->
+      <section class="deck-card" aria-label="Pengaturan Parameter Pencahayaan & Material">
+        <h2 class="deck-card-title">
+          <span>Lighting &amp; Material Dynamics</span>
+          <span class="deck-card-tag">Interactive Tuning</span>
+        </h2>
+
+        <div class="slider-group">
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Ambient Light Intensity (Ka)</span>
+              <span id="ambientVal" class="slider-val-pill">0.25</span>
+            </div>
+            <input id="ambientSlider" class="apple-slider" type="range" min="0.00" max="1.00" step="0.02" value="0.25" aria-label="Intensitas Ambient">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Specular Shininess (Exponent)</span>
+              <span id="shininessVal" class="slider-val-pill">48</span>
+            </div>
+            <input id="shininessSlider" class="apple-slider" type="range" min="4" max="180" step="2" value="48" aria-label="Eksponen Shininess">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Light Elevation Y</span>
+              <span id="lightElevationVal" class="slider-val-pill">3.5</span>
+            </div>
+            <input id="lightElevationSlider" class="apple-slider" type="range" min="-3.0" max="8.0" step="0.2" value="3.5" aria-label="Ketinggian Lampu">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Light Orbit Speed (rad/s)</span>
+              <span id="lightOrbitSpeedVal" class="slider-val-pill">0.80 rad/s</span>
+            </div>
+            <input id="lightOrbitSpeedSlider" class="apple-slider" type="range" min="0.0" max="3.0" step="0.1" value="0.8" aria-label="Kecepatan Orbit Lampu">
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-header">
+              <span>Scale X / Y / Z (Non-Uniform Test)</span>
+              <span>
+                <span id="scaleXVal" class="slider-val-pill">1.00</span>
+                <span id="scaleYVal" class="slider-val-pill">1.00</span>
+                <span id="scaleZVal" class="slider-val-pill">1.00</span>
+              </span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <input id="scaleXSlider" class="apple-slider" type="range" min="0.4" max="3.0" step="0.1" value="1.0" aria-label="Scale X">
+              <input id="scaleYSlider" class="apple-slider" type="range" min="0.4" max="3.0" step="0.1" value="1.0" aria-label="Scale Y">
+              <input id="scaleZSlider" class="apple-slider" type="range" min="0.4" max="3.0" step="0.1" value="1.0" aria-label="Scale Z">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 2: Live 3x3 Normal Matrix & Mipmap Filter Selector -->
+      <section class="deck-card" aria-label="Visualisasi Matriks Normal 3x3 & Mipmap Filter">
+        <h2 class="deck-card-title">
+          <span>Live 3×3 Normal Matrix (M^-1T)</span>
+          <span class="deck-card-tag">Inverse-Transpose</span>
+        </h2>
+
+        <div class="matrix-visualizer-box" id="matrixText" aria-live="polite">
+┌  1.000   0.000   0.000 ┐
+│  0.000   1.000   0.000 │
+└  0.000   0.000   1.000 ┘
+        </div>
+
+        <div class="matrix-legend">
+          Format: <code>Float32Array[9]</code> dikirim via <code>gl.uniformMatrix3fv(u_normalMatrix, false, ...)</code>.<br>
+          Dihitung mandiri melalui <code>mat3.normalFromMat4(out, modelMatrix)</code>. Menjamin vektor normal tetap ortogonal terhadap permukaan saat objek mengalami penskalaan non-uniform.
+        </div>
+
+        <div style="margin-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 12px;">
+          <span class="control-label" style="display: block; margin-bottom: 8px;">Mipmap Texture Filtering (Challenge G):</span>
+          <div class="segmented" role="group" aria-label="Mipmap Filtering Selector" style="width: 100%; display: flex;">
+            <button class="choice" id="filter-nearest" style="flex: 1;" title="Nearest Neighbor Filtering">Nearest</button>
+            <button class="choice" id="filter-linear" style="flex: 1;" title="Bilinear Filtering">Linear</button>
+            <button class="choice" id="filter-mipmap-nearest" style="flex: 1;" title="Bilinear with Nearest Mipmap">Mipmap-N</button>
+            <button class="choice active" id="filter-trilinear" style="flex: 1;" title="Trilinear Filtering (Linear Mipmap Linear)">Trilinear</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Petunjuk Interaksi & Shortcut Keyboard -->
+    <section class="playground-shortcuts" aria-label="Daftar Shortcut dan Petunjuk Pengguna">
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">1</span><span class="key-cap">2</span><span class="key-cap">3</span><span class="key-cap">4</span>
+        </div>
+        <span class="shortcut-desc">Ganti Tekstur (Checkerboard, UV Grid, Circuit, Marble)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">F</span>
+        </div>
+        <span class="shortcut-desc">Toggle Flat Shading (Derivatives) vs Smooth Phong</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">L</span>
+          <span class="key-separator">|</span>
+          <span class="key-cap">N</span>
+        </div>
+        <span class="shortcut-desc">Toggle Orbit Cahaya (L) &amp; Normal Matrix Bypass (N)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">Drag Mouse</span>
+          <span class="key-separator">/</span>
+          <span class="key-cap">Scroll</span>
+        </div>
+        <span class="shortcut-desc">Interaksi Orbit Sudut Pandang Kamera &amp; Zoom</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">P</span>
+          <span class="key-separator">|</span>
+          <span class="key-cap">R</span>
+        </div>
+        <span class="shortcut-desc">Pause Render Loop (P) &amp; Reset Konfigurasi Semula (R)</span>
+      </div>
+      <div class="shortcut-chip">
+        <div class="shortcut-keys">
+          <span class="key-cap">[</span><span class="key-cap">]</span><span class="key-cap">H</span>
+        </div>
+        <span class="shortcut-desc">Navigasi Modul (Prev [ / Next ] / Home H)</span>
+      </div>
+    </section>
 
     <!-- Metadata & Implementation Specs -->
     <section class="workbench-meta-panel">
+      <!-- 1. Deskripsi & Sasaran Pembelajaran -->
       <div class="meta-box">
         <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
         <div class="meta-box-content">
-          <p>Pengembangan permukaan objek 3D di WebGL dengan menambahkan data Vektor Normal permukaan, simulasi pencahayaan (Ambient, Diffuse, Specular), Normal Matrix, perbandingan Flat vs Smooth Shading, dan UV Texture Mapping.</p>
+          <p>
+            Modul Praktikum 5 mengimplementasikan interaksi cahaya fisik dengan permukaan objek 3D di WebGL2, memadukan perhitungan vektor normal, model refleksi pencahayaan Blinn-Phong, transformasi Matriks Normal 3×3 (invers-transpose dari Model Matrix), serta pemetaan tekstur UV dengan filter Mipmap.
+          </p>
           <ul>
-            <li>Menghitung dan menormalkan vektor normal permukaan (face & vertex normal).</li>
-              <li>Kalkulasi Ambient, Diffuse (Lambertian dot product), dan Specular lighting.</li>
-              <li>Transformasi vektor normal menggunakan Normal Matrix.</li>
-              <li>Pemetaan tekstur UV dengan texture sampling di fragment shader.</li>
-              <li>Perbandingan Flat Shading dan Smooth (Phong) Shading.</li>
+            <li>Memahami dan menghitung vektor normal permukaan secara analitik per-face serta menormalkannya dengan <code>normalize()</code>.</li>
+            <li>Mengimplementasikan tiga komponen model refleksi Blinn-Phong pada Fragment Shader:
+              <ul>
+                <li><strong>Ambient:</strong> Iluminasi dasar lingkungan (intensitas dasar material Ka dikalikan warna cahaya lingkungan La).</li>
+                <li><strong>Diffuse:</strong> Pantulan baur Lambertian proporsional terhadap nilai maksimum perkalian dot vektor normal (N) dan arah datang sinar (L).</li>
+                <li><strong>Specular:</strong> Pantulan kilau cermin berbasis vektor separuh Blinn (H = normalisasi dari penjumlahan arah sinar L dan arah pandang kamera V) dipangkatkan nilai kilau shininess material.</li>
+              </ul>
+            </li>
+            <li>Mengonstruksi <strong>Normal Matrix</strong> (matriks 3×3 hasil invers-transpose dari Model Matrix) untuk menjaga keabsahan orientasi normal saat objek mengalami penskalaan non-uniform.</li>
+            <li>Membedakan Flat Shading dan Smooth Shading secara real-time pada GLSL ES 3.00 menggunakan fungsi turunan parsial <code>dFdx()</code> dan <code>dFdy()</code>.</li>
+            <li>Mengimplementasikan pemetaan tekstur UV 2D dengan koordinat tekstur (<code>a_texCoord</code>) dan texture sampler di fragment shader.</li>
+            <li>Mendemonstrasikan hierarki level of detail (LOD) piramida Mipmap dan membandingkan filter Nearest, Linear, serta Trilinear filtering.</li>
           </ul>
-          
+
+          <!-- 2. Fitur & Tantangan yang Diimplementasikan -->
+          <h3 class="meta-box-title" style="margin-top: 24px;">Fitur &amp; Tantangan yang Diimplementasikan</h3>
+          <div class="challenges-grid">
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 1: Normal Vektor Per-Face &amp; Buffering</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Setiap verteks kubus dilengkapi vektor normal ortogonal yang dinormalisasi pada GPU buffer Float32Array dan dialirkan ke shader via attribute <code>a_normal</code>.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 2: Model Pencahayaan Blinn-Phong Lengkap</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Kalkulasi per-fragment untuk Ambient, Lambertian Diffuse, dan Blinn Specular dengan vektor separuh Blinn (L + V yang dinormalisasi) serta kontrol eksponen shininess material.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 3: Normal Matrix (Inverse-Transpose)</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Transformasi vektor normal menggunakan matriks 3×3 invers-transpose dari Model Matrix, menjamin vektor normal tetap tegak lurus pada penskalaan anisotropik atau non-uniform.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Tugas Inti 4: Pemetaan Tekstur UV 2D</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Atribut koordinat tekstur <code>a_texCoord</code> dipetakan ke setiap sisi kubus dan dikomposisikan bersama pencahayaan melalui <code>texture(u_texture, v_texCoord)</code>.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge A: 4 Tekstur Prosedural Dinamis</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Empat variasi tekstur prosedural resolusi tinggi 512×512 (Checkerboard, UV Calibration Grid, Cyber Circuit, dan Sinusoidal Marble) yang dibuat secara instan di memori kanvas tanpa risiko CORS pada protokol file:///.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge B: Slider Intensitas Ambient Light</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Slider interaktif real-time pada Dashboard Deck untuk mengatur proporsi cahaya dasar lingkungan (0.00 s/d 1.00) dikirim via uniform <code>u_ambientIntensity</code>.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge C: Kontrol Posisi Kamera &amp; Cahaya Interaktif</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Posisi sumber cahaya dan kamera dapat diatur secara mandiri menggunakan slider koordinat maupun pergerakan drag mouse dengan penayangan telemetri real-time.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge D: Non-Uniform Scale &amp; Normal Matrix Validation</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Uji ketahanan normal matrix dengan tombol mode penskalaan non-uniform (sumbu X, Y, Z berbeda) dan saklar bypass normal matrix untuk membuktikan distorsi pencahayaan jika matriks invers-transpose tidak digunakan.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge E: Animasi Orbit Sumber Cahaya</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Sumber cahaya bergerak mengelilingi objek kubus secara sirkular (melingkar berbasis koordinat sinus dan cosinus waktu) disertai indikator visual kubus bercahaya kuning pada posisi cahaya.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge F: Saklar Komponen Cahaya Terpisah</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Tombol toggle mandiri untuk mengaktifkan/menonaktifkan masing-masing komponen Ambient, Diffuse, dan Specular secara independen untuk mengamati kontribusi fisik tiap komponen.</p>
+            </div>
+
+            <div class="challenge-item">
+              <div class="challenge-item-header">
+                <span class="challenge-item-title">Challenge G: Demonstrasi Mipmap Filtering</span>
+                <span class="challenge-status-tag">Selesai</span>
+              </div>
+              <p class="challenge-item-desc">Pemilihan mode sampling tekstur WebGL secara langsung: Nearest Neighbor, Bilinear, Bilinear with Nearest Mipmap, dan Trilinear (Linear Mipmap Linear) dengan <code>gl.generateMipmap()</code>.</p>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- 3. Spesifikasi Praktikum -->
       <div class="meta-box">
         <h2 class="meta-box-title">Spesifikasi Praktikum</h2>
         <table class="tech-specs-table">
+          <thead>
+            <tr><th>Komponen</th><th>Implementasi Teknis</th></tr>
+          </thead>
           <tbody>
             <tr>
-              <th>Nomor Modul</th>
+              <td>Nomor Modul</td>
               <td>Praktikum 5</td>
             </tr>
             <tr>
-              <th>Topik / Kategori</th>
-              <td>Lighting, Shading & Texture</td>
+              <td>Topik / Kategori</td>
+              <td>Lighting, Shading &amp; Texture pada WebGL</td>
             </tr>
             <tr>
-              <th>Status Praktikum</th>
-              <td>On Progress</td>
+              <td>Status Praktikum</td>
+              <td>Finished</td>
             </tr>
             <tr>
-              <th>Renderer</th>
-              <td>Canvas 2D / WebGL</td>
+              <td>Rendering API</td>
+              <td>WebGL2 Context (GLSL ES 3.00)</td>
+            </tr>
+            <tr>
+              <td>Model Pencahayaan</td>
+              <td>Blinn-Phong Reflection (Ambient + Diffuse Lambertian + Specular Half-Vector)</td>
+            </tr>
+            <tr>
+              <td>Normal Transformation</td>
+              <td>Normal Matrix 3×3 (invers-transpose dari Model Matrix) Float32Array via <code>mat3.normalFromMat4</code></td>
+            </tr>
+            <tr>
+              <td>Tekstur &amp; Sampling</td>
+              <td>Canvas 2D Procedural Data Upload, <code>gl.generateMipmap</code>, Trilinear Filtering</td>
+            </tr>
+            <tr>
+              <td>Shading Mode</td>
+              <td>Smooth Interpolated Phong vs Screen-Space Derivatives Flat Shading (<code>dFdx/dFdy</code>)</td>
+            </tr>
+            <tr>
+              <td>Interaksi &amp; Kontrol</td>
+              <td>Slider Ka/Shininess/Light Pos/Scale, Hotkey 1-4 (Texture), F (Flat), L (Light Orbit), N, P, R</td>
             </tr>
           </tbody>
         </table>
@@ -179,7 +509,6 @@
     </section>
   </main>
 
-  
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-info">
@@ -193,7 +522,9 @@
     </div>
   </footer>
 
+  <!-- Universal Script Loading: Compatible with both file:/// and http:// -->
   <script src="../assets/js/main.js"></script>
-  
+  <script src="./math3d.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

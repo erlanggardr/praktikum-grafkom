@@ -63,8 +63,8 @@ const PRAKTIKUM_DATA = [
     title: "Camera, Projection & 3D dengan WebGL",
     category: "Kamera & Proyeksi 3D",
     hasPraktikum: true,
-    status: "progress",
-    statusLabel: "On Progress",
+    status: "finished",
+    statusLabel: "Finished",
     desc: "Konstruksi pipeline 3D pada WebGL meliputi pembuatan geometri kubus 3D, View Matrix dengan konsep LookAt (kamera, target, up vector), Perspective & Orthographic Projection Matrix, serta aktivasi Depth Test (Z-buffer).",
     details: [
       "Membuat View Matrix dengan konsep lookAt (position, target, up vector).",
@@ -81,8 +81,8 @@ const PRAKTIKUM_DATA = [
     title: "Lighting, Shading & Texture pada WebGL",
     category: "Lighting, Shading & Texture",
     hasPraktikum: true,
-    status: "progress",
-    statusLabel: "On Progress",
+    status: "finished",
+    statusLabel: "Finished",
     desc: "Pengembangan permukaan objek 3D di WebGL dengan menambahkan data Vektor Normal permukaan, simulasi pencahayaan (Ambient, Diffuse, Specular), Normal Matrix, perbandingan Flat vs Smooth Shading, dan UV Texture Mapping.",
     details: [
       "Menghitung dan menormalkan vektor normal permukaan (face & vertex normal).",
@@ -99,8 +99,8 @@ const PRAKTIKUM_DATA = [
     title: "Introduction to Three.js — Mini 3D Scene",
     category: "Three.js Fundamental",
     hasPraktikum: true,
-    status: "progress",
-    statusLabel: "On Progress",
+    status: "finished",
+    statusLabel: "Finished",
     desc: "Pembangunan scene grafika 3D terstruktur menggunakan Three.js sebagai abstraction layer di atas WebGL: inisialisasi Scene, PerspectiveCamera, WebGLRenderer, Mesh (Box, Sphere, Plane), Material, Lighting, Shadow, dan Animation Loop responsif.",
     details: [
       "Inisialisasi Three.js Scene, PerspectiveCamera, dan WebGLRenderer.",
@@ -442,7 +442,7 @@ function generateIndexHtml() {
 function generatePraktikumPages() {
   PRAKTIKUM_DATA.forEach((p, idx) => {
     // Preserve custom implemented workbench modules
-    if (p.id === 2 || p.id === 3) return;
+    if (p.id >= 2 && p.id <= 6) return;
 
     const dir = join(ROOT_DIR, p.slug);
     mkdirSync(dir, { recursive: true });
