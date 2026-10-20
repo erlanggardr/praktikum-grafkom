@@ -25,7 +25,7 @@ Daftar modul praktikum disinkronisasi langsung dari [Learning Hub Grafika Komput
 | **P04** | Camera, Projection & 3D dengan WebGL | Kamera & Proyeksi 3D | `/praktikum-4/` | Finished |
 | **P05** | Lighting, Shading & Texture pada WebGL | Lighting, Shading & Texture | `/praktikum-5/` | Finished |
 | **P06** | Introduction to Three.js — Mini 3D Scene | Three.js Fundamental | `/praktikum-6/` | Finished |
-| **P07** | Three.js Interactive 3D Application | Three.js Interactive 3D | `/praktikum-7/` | On Progress |
+| **P07** | Three.js Interactive 3D Application | Three.js Interactive 3D | `/praktikum-7/` | Finished |
 | **P08** | - | - | `/praktikum-8/` | On Progress |
 | **P09** | Blender Fundamental & 3D Modeling — Hard-Surface Asset | Blender 3D Modeling | `/praktikum-9/` | On Progress |
 | **P10** | Blender Materials, UV & Texturing | Blender UV & Texturing | `/praktikum-10/` | On Progress |
