@@ -6,6 +6,8 @@
   <title>Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset - Kelompok YOLO</title>
   <meta name="description" content="Modul Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset Grafika Komputer oleh Kelompok YOLO.">
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="icon" href="data:,">
 </head>
 <body>
   <!-- Global Navigation Header -->
@@ -21,22 +23,22 @@
       <nav class="header-nav" aria-label="Navigasi Praktikum">
         <select id="quick-jump-select" class="nav-select" aria-label="Pilih Praktikum Cepat">
           <option value="../">-- Pilih Praktikum --</option>
-                <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
-                <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
-                <option value="../praktikum-3/">Praktikum 3: Interactive Transformation & Coordinate System dengan WebGL</option>
-                <option value="../praktikum-4/">Praktikum 4: Camera, Projection & 3D dengan WebGL</option>
-                <option value="../praktikum-5/">Praktikum 5: Lighting, Shading & Texture pada WebGL</option>
-                <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
-                <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
-                <option value="../praktikum-8/">Praktikum 8: -</option>
-                <option value="../praktikum-9/" selected>Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</option>
-                <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV & Texturing</option>
-                <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera & Rendering</option>
-                <option value="../praktikum-12/">Praktikum 12: Unity 3D & Real-Time Rendering Pipeline — Unity 6+ / URP</option>
-                <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material & Post Processing — Unity 6+ / URP</option>
-                <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
-                <option value="../praktikum-15/">Praktikum 15: VFX, Particle & Graphics Optimization — Unity 6+ / URP</option>
-                <option value="../praktikum-16/">Praktikum 16: -</option>
+          <option value="../praktikum-1/">Praktikum 1: Graphics Playground dengan HTML Canvas 2D</option>
+          <option value="../praktikum-2/">Praktikum 2: WebGL Fundamental Playground</option>
+          <option value="../praktikum-3/">Praktikum 3: Interactive Transformation &amp; Coordinate System dengan WebGL</option>
+          <option value="../praktikum-4/">Praktikum 4: Camera, Projection &amp; 3D dengan WebGL</option>
+          <option value="../praktikum-5/">Praktikum 5: Lighting, Shading &amp; Texture pada WebGL</option>
+          <option value="../praktikum-6/">Praktikum 6: Introduction to Three.js — Mini 3D Scene</option>
+          <option value="../praktikum-7/">Praktikum 7: Three.js Interactive 3D Application — Prototype Persiapan UTS</option>
+          <option value="../praktikum-8/">Praktikum 8: -</option>
+          <option value="../praktikum-9/" selected>Praktikum 9: Blender Fundamental &amp; 3D Modeling — Hard-Surface Asset</option>
+          <option value="../praktikum-10/">Praktikum 10: Blender Materials, UV &amp; Texturing</option>
+          <option value="../praktikum-11/">Praktikum 11: Blender Lighting, Camera &amp; Rendering</option>
+          <option value="../praktikum-12/">Praktikum 12: Unity 3D &amp; Real-Time Rendering Pipeline — Unity 6+ / URP</option>
+          <option value="../praktikum-13/">Praktikum 13: Unity Lighting, Material &amp; Post Processing — Unity 6+ / URP</option>
+          <option value="../praktikum-14/">Praktikum 14: Unity Shader Graph — Custom Surface Behavior</option>
+          <option value="../praktikum-15/">Praktikum 15: VFX, Particle &amp; Graphics Optimization — Unity 6+ / URP</option>
+          <option value="../praktikum-16/">Praktikum 16: -</option>
         </select>
         <button id="theme-toggle" class="btn-icon" title="Toggle Tema" aria-label="Toggle Tema">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,27 +58,26 @@
   </header>
 
   <main class="container">
-    
-      <!-- Team Metadata Banner -->
-      <section class="team-banner" aria-label="Informasi Kelompok">
-        <div class="team-banner-header">
-          <span class="team-tag">Kelompok YOLO</span>
-        </div>
-        <div class="team-members-grid">
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">JALU CAHYO SENODIPUTRO</span>
-              <span class="member-nrp">NRP 5025241155</span>
-            </div>
-          </div>
-          <div class="member-card">
-            <div class="member-info">
-              <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
-              <span class="member-nrp">NRP 5025241179</span>
-            </div>
+    <!-- Team Metadata Banner -->
+    <section class="team-banner" aria-label="Informasi Kelompok">
+      <div class="team-banner-header">
+        <span class="team-tag">Kelompok YOLO</span>
+      </div>
+      <div class="team-members-grid">
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">JALU CAHYO SENODIPUTRO</span>
+            <span class="member-nrp">NRP 5025241155</span>
           </div>
         </div>
-      </section>
+        <div class="member-card">
+          <div class="member-info">
+            <span class="member-name">ERLANGGA RIZQI DWI RASWANTO</span>
+            <span class="member-nrp">NRP 5025241179</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Workbench Header -->
     <section class="workbench-header">
@@ -86,22 +87,21 @@
           <span>&rsaquo;</span>
           <span>Blender 3D Modeling</span>
           <span>&rsaquo;</span>
-          <span class="status-badge progress">On Progress</span>
+          <span class="status-badge finished">Finished</span>
         </div>
         <div class="workbench-title-row">
-          <h1 class="workbench-title">Praktikum 9: Blender Fundamental & 3D Modeling — Hard-Surface Asset</h1>
+          <h1 class="workbench-title">Praktikum 9: Blender Fundamental &amp; 3D Modeling — Hard-Surface Asset</h1>
         </div>
       </div>
       <div class="workbench-pagination" aria-label="Navigasi Halaman Praktikum">
-        <a href="../praktikum-8/" class="nav-btn" id="nav-prev-btn" title="Praktikum Sebelumnya ["><span aria-hidden="true">&larr;</span> Praktikum 8</a>
+        <a href="../praktikum-7/" class="nav-btn" id="nav-prev-btn" title="Praktikum Sebelumnya ["><span aria-hidden="true">&larr;</span> Praktikum 7</a>
         <a href="../" class="nav-btn" title="Daftar Modul">Daftar</a>
         <a href="../praktikum-10/" class="nav-btn" id="nav-next-btn" title="Praktikum Selanjutnya ]">Praktikum 10 <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
-    
     <!-- Interactive Canvas Viewport Workbench -->
-    <section class="workbench-viewport" aria-label="Viewport Render Grafika">
+    <section class="workbench-viewport" aria-label="Viewport Render Grafika Three.js">
       <div class="viewport-toolbar">
         <div class="toolbar-info">
           <div class="toolbar-stat">
@@ -113,43 +113,150 @@
             <span id="fps-stat" class="toolbar-stat-val">60 FPS</span>
           </div>
           <div class="toolbar-stat">
-            <span>Mode:</span>
-            <span class="toolbar-stat-val">Canvas 2D / WebGL</span>
+            <span>Asset:</span>
+            <span class="toolbar-stat-val">SciFi Crate (Modular)</span>
+          </div>
+          <div class="toolbar-stat">
+            <span>Engine:</span>
+            <span class="toolbar-stat-val">Three.js r128 (glTF 2.0 &amp; PBR)</span>
           </div>
         </div>
         <div class="toolbar-actions">
-          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Orientasi Kamera/Objek">Reset View</button>
+          <span id="live-pill" class="live-pill"><i></i> LIVE</span>
+          <button id="canvas-reset-btn" class="toolbar-btn" title="Reset Sudut Pandang Kamera (Key: R)">Reset View</button>
           <button id="canvas-fullscreen-btn" class="toolbar-btn" title="Layar Penuh Viewport">Fullscreen</button>
         </div>
       </div>
 
       <div class="canvas-wrapper">
-        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render Grafika Praktikum 9"></canvas>
-        <div class="canvas-placeholder-hud">
-          <span class="placeholder-badge">Praktikum 9</span>
-          <h2 class="placeholder-title">Blender Fundamental & 3D Modeling — Hard-Surface Asset</h2>
-          <p class="placeholder-subtext">Area viewport render interaktif siap diintegrasikan dengan skrip tugas praktikum.</p>
+        <canvas id="grafkom-canvas" class="canvas-target" aria-label="Kanvas Render 3D Sci-Fi Crate"></canvas>
+
+        <!-- Glassmorphic Live Telemetry HUD -->
+        <div class="hud-telemetry-panel" aria-label="HUD Informasi Topologi & Telemetri">
+          <div class="hud-panel-header">
+            <span class="hud-title-badge">BLENDER EVALUATED MESH</span>
+            <span id="hud-model-status" class="hud-item-val highlight-green">Loading Model...</span>
+          </div>
+
+          <div class="hud-item">
+            <span class="hud-item-label">View Mode:</span>
+            <span id="hud-viewmode" class="hud-item-val highlight">LIT PBR (Materials)</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Polygon Count:</span>
+            <span id="hud-polycount" class="hud-item-val font-mono highlight-gold">Calculating...</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Camera Orbit:</span>
+            <span id="hud-cam-orbit" class="hud-item-val font-mono">R: 4.8 | θ: 43° | φ: 66°</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item-label">Applied Scale:</span>
+            <span class="hud-item-val highlight-green">(1.0, 1.0, 1.0) Clean</span>
+          </div>
         </div>
-        <div id="coords-display" class="canvas-coords-indicator">X: 0pt, Y: 0pt | UV: (0.00, 0.00)</div>
+
+        <div id="coords-display" class="canvas-coords-indicator">X: 0px, Y: 0px | UV: (0.00, 0.00)</div>
       </div>
     </section>
 
-    
+    <!-- Controls & Management Panel -->
+    <section class="workbench-controls-grid">
+      <!-- Card 1: View Modes & Shading -->
+      <div class="control-card">
+        <h3>Tampilan &amp; Mode Shading</h3>
+        <p style="font-size: 12px; color: var(--secondary-label); margin: 0 0 12px;">Pilih mode visualisasi untuk menganalisis topologi quad, bevel highlight, atau arah vektor normal.</p>
+        <div class="btn-group">
+          <button id="mode-pbr-btn" class="action-btn active">Lit PBR</button>
+          <button id="mode-wire-btn" class="action-btn">Wireframe</button>
+          <button id="mode-normals-btn" class="action-btn">Normal Vector</button>
+          <button id="toggle-rotate-btn" class="action-btn">Auto Rotate</button>
+        </div>
+      </div>
+
+      <!-- Card 2: Modifiers Stack -->
+      <div class="control-card">
+        <h3>Modifier Stack yang Diterapkan</h3>
+        <div class="specs-list">
+          <div class="spec-row">
+            <span>Bevel Modifier:</span>
+            <b>Angle Limit 35°, 2 Segments</b>
+          </div>
+          <div class="spec-row">
+            <span>Mirror Modifier (X):</span>
+            <b>Modular Handles (Symmetrical)</b>
+          </div>
+          <div class="spec-row">
+            <span>Mirror Modifier (XY):</span>
+            <b>Corner Reinforcements (4 Corners)</b>
+          </div>
+          <div class="spec-row">
+            <span>Array Modifier:</span>
+            <b>Vent Grille (6 Parametric Slats)</b>
+          </div>
+          <div class="spec-row">
+            <span>Solidify Modifier:</span>
+            <b>Front Armor Plate (Thickness 0.035)</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Workflow Screenshots -->
+      <div class="control-card">
+        <h3>Dokumentasi Workflow</h3>
+        <div class="gallery-grid">
+          <a href="./screenshot_blockout.png" target="_blank" class="gallery-item" title="1. Blockout Geometri">
+            <img src="./screenshot_blockout.png" alt="Tahap 1 Blockout">
+            <span class="gallery-label">1. Blockout</span>
+          </a>
+          <a href="./screenshot_modeling.png" target="_blank" class="gallery-item" title="2. Modeling Inset &amp; Extrude">
+            <img src="./screenshot_modeling.png" alt="Tahap 2 Modeling">
+            <span class="gallery-label">2. Modeling</span>
+          </a>
+          <a href="./screenshot_final.png" target="_blank" class="gallery-item" title="3. Render Final Evaluasi">
+            <img src="./screenshot_final.png" alt="Tahap 3 Final Render">
+            <span class="gallery-label">3. Final Render</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Downloads & Deliverables -->
+      <div class="control-card">
+        <h3>Berkas Pengumpulan Tugas</h3>
+        <div class="specs-list">
+          <a href="./P09_YOLO_SciFiCrate.blend" download class="download-btn-card">
+            <span>📦 P09_YOLO_SciFiCrate.blend</span>
+            <span>114 KB &darr;</span>
+          </a>
+          <a href="./P09_Kelompok_NamaAsset.blend" download class="download-btn-card">
+            <span>📦 P09_Kelompok_NamaAsset.blend</span>
+            <span>114 KB &darr;</span>
+          </a>
+          <a href="./assets/models/P09_YOLO_SciFiCrate.glb" download class="download-btn-card">
+            <span>🌐 P09_YOLO_SciFiCrate.glb</span>
+            <span>238 KB &darr;</span>
+          </a>
+          <a href="./P09_YOLO_SciFiCrate.zip" download class="download-btn-card">
+            <span>🗜️ P09_YOLO_SciFiCrate.zip (Lengkap)</span>
+            <span>3.5 MB &darr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Metadata & Implementation Specs -->
-    <section class="workbench-meta-panel">
+    <section class="workbench-meta-panel" style="margin-top: 24px;">
       <div class="meta-box">
         <h2 class="meta-box-title">Deskripsi &amp; Sasaran Pembelajaran</h2>
         <div class="meta-box-content">
-          <p>Workflow pemodelan aset 3D hard-surface di Blender: navigasi 3D Viewport, manipulasi primitif, Edit Mode (Extrude, Inset, Loop Cut, Bevel), modifier (Subdivision Surface, Bevel, Mirror), dan cleanup topologi mesh 3D.</p>
+          <p>Workflow pemodelan aset 3D hard-surface di Blender: navigasi 3D Viewport, manipulasi primitif, Edit Mode (Extrude, Inset, Loop Cut, Bevel), modifier non-destruktif (Bevel, Mirror, Array, Solidify), dan cleanup topologi mesh 3D.</p>
           <ul>
             <li>Navigasi 3D Viewport dan penggunaan shortcut esensial Blender.</li>
-              <li>Pemodelan polygon hard-surface dengan Extrude, Inset, Loop Cut, dan Bevel.</li>
-              <li>Penerapan Non-Destructive Modifiers (Bevel, Mirror, Subdivision).</li>
-              <li>Manajemen topologi dan pembersihan mesh (topology cleanup).</li>
-              <li>Ekspor aset 3D siap pakai untuk pipeline tekstur dan game engine.</li>
+            <li>Pemodelan polygon hard-surface dengan Extrude, Inset, Loop Cut, dan Bevel.</li>
+            <li>Penerapan Non-Destructive Modifiers (Bevel, Mirror, Array, Solidify).</li>
+            <li>Manajemen topologi dan pembersihan mesh (topology cleanup).</li>
+            <li>Ekspor aset 3D siap pakai untuk pipeline tekstur dan game engine.</li>
           </ul>
-          
         </div>
       </div>
 
@@ -163,15 +270,19 @@
             </tr>
             <tr>
               <th>Topik / Kategori</th>
-              <td>Blender 3D Modeling</td>
+              <td>Blender 3D Modeling (Hard-Surface)</td>
             </tr>
             <tr>
               <th>Status Praktikum</th>
-              <td>On Progress</td>
+              <td><span class="status-badge finished">Finished</span></td>
             </tr>
             <tr>
-              <th>Renderer</th>
-              <td>Canvas 2D / WebGL</td>
+              <th>Perangkat Lunak</th>
+              <td>Blender 5.2.2 LTS &bull; Three.js r128</td>
+            </tr>
+            <tr>
+              <th>Format Aset</th>
+              <td>.blend &bull; .glb (glTF 2.0)</td>
             </tr>
           </tbody>
         </table>
@@ -179,7 +290,6 @@
     </section>
   </main>
 
-  
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-info">
@@ -193,7 +303,26 @@
     </div>
   </footer>
 
+  <!-- Three.js Core Local + CDN Fallback -->
+  <script src="../assets/js/vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === "undefined") {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- Three.js r128 GLTFLoader Local + CDN Fallback -->
+  <script src="../assets/js/vendor/GLTFLoader.js"></script>
+  <script>
+    if (typeof THREE !== "undefined" && typeof THREE.GLTFLoader === "undefined") {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"><\/script>');
+    }
+  </script>
+
+  <!-- Shared Portal Client Scripts -->
   <script src="../assets/js/main.js"></script>
-  
+
+  <!-- Praktikum 9 Application Logic -->
+  <script src="./app.js"></script>
 </body>
 </html>
