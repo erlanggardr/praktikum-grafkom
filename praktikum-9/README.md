@@ -24,7 +24,7 @@
 * **Kategori:** Hard-Surface 3D Prop (Game-Ready & Interactive Web 3D)
 * **Starting Primitive:** `Cube` (Chassis utama peti, tutup, handle) dan `Plane` (Armor plat pelindung)
 * **Berkas Hasil Praktikum:**
-  * `.blend` Utama: [`P09_YOLO_SciFiCrate.blend`](./P09_YOLO_SciFiCrate.blend) (atau alias [`P09_Kelompok_NamaAsset.blend`](./P09_Kelompok_NamaAsset.blend))
+  * `.blend` Utama: [`P09_YOLO_SciFiCrate.blend`](./P09_YOLO_SciFiCrate.blend)
   * `.glb` Web 3D: [`assets/models/P09_YOLO_SciFiCrate.glb`](./assets/models/P09_YOLO_SciFiCrate.glb) (238 KB)
   * Arsip Pengumpulan: [`P09_YOLO_SciFiCrate.zip`](./P09_YOLO_SciFiCrate.zip)
 * **Tangkapan Layar Workflow (Dokumentasi Proses):**
