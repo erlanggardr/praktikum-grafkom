@@ -71,6 +71,10 @@ Hasil akhir: **571 seam edge**, **254 island**.
 
 ![Final UV](./screenshots/05_final_uv_layout.png)
 
+Gambar di atas digambar ulang dari data UV (diberi legenda warna per bagian). Hasil mentah dari Blender (`UV ▸ Export UV Layout`) ada di [`05c_blender_export_layout.png`](./screenshots/05c_blender_export_layout.png).
+
+![Export UV Layout Blender](./screenshots/05c_blender_export_layout.png)
+
 ---
 
 ## 4. Texel Density & Packing
