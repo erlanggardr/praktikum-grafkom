@@ -104,7 +104,7 @@ Tekstur checker 32×32 berwarna (`textures/crate_checker_test.png`) dipasang pad
 
 | Tahap | Masalah | Perbaikan |
 |---|---|---|
-| Unwrap awal ([`03_initial_unwrap.png`](./screenshots/03_initial_unwrap.png)) | Skala island tidak seragam; **22 face stretch > 1,30**; **24 pasang face terlipat/overlap** | Skrip checker loop: face yang stretch diberi seam di sekelilingnya (island sendiri), pasangan terlipat dipotong di edge bersamanya, lalu unwrap ulang. Round 0: 22 → round 1: **0** face stretch |
+| Unwrap awal ([`03_initial_unwrap.png`](./screenshots/03_initial_unwrap.png) = komposit berwarna; hasil mentah Blender: [`03b_initial_unwrap_blender_export.png`](./screenshots/03b_initial_unwrap_blender_export.png)) | Skala island tidak seragam; **22 face stretch > 1,30**; **24 pasang face terlipat/overlap** | Skrip checker loop: face yang stretch diberi seam di sekelilingnya (island sendiri), pasangan terlipat dipotong di edge bersamanya, lalu unwrap ulang. Round 0: 22 → round 1: **0** face stretch |
 | Skala | Island besar dan kecil punya density berbeda | Normalisasi density per island (§4) |
 | Overlap | Sisa lipatan pada face sliver | Margin dinaikkan 8 → 12 px; sisa overlap 48 px (sub-piksel) |
 | Face tersembunyi | Awalnya klasifikasi "tersembunyi" terlalu agresif (toleransi 2 mm): chamfer skirt yang terlihat ikut diperkecil sehingga hazard stripe **buram** | Toleransi dilonggarkan ke 3,5 cm (≈ lebar bevel). Face tersembunyi turun 171 → 26 |
